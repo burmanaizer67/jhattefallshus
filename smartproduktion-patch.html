@@ -511,6 +511,18 @@
   function q(sel, root) { return (root || document).querySelector(sel); }
   function qa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
+  function getLogoSrc() {
+    var isGithubPages = /github\.io$/i.test(window.location.hostname || "");
+    var isFilePreview = (window.location.protocol || "") === "file:";
+    if (!isGithubPages && !isFilePreview) return "";
+
+    if (isFilePreview) return "./logotyp-jh-attefallshus.png";
+
+    var segments = (window.location.pathname || "/").split("/").filter(Boolean);
+    var repoBase = segments.length > 0 ? "/" + segments[0] : "";
+    return repoBase + "/logotyp-jh-attefallshus.png";
+  }
+
   function getOfferHref() {
     var defaultHref = "/offertf%C3%B6rfr%C3%A5gan";
     var isGithubPages = /github\.io$/i.test(window.location.hostname || "");
@@ -660,6 +672,37 @@
         a.textContent = "Få offert";
       }
     });
+  }
+
+  function applyHeaderLogo() {
+    var logoSrc = getLogoSrc();
+    if (!logoSrc) return;
+
+    var candidates = qa(".site-header .logo, header .logo, .Navbar a[href='/'], .TopBar a[href='/'], header a[href='/']");
+    if (!candidates.length) return;
+
+    var target = candidates[0];
+    if (!target || q("img", target)) return;
+
+    target.style.display = "inline-flex";
+    target.style.alignItems = "center";
+    target.style.gap = "10px";
+
+    var img = document.createElement("img");
+    img.src = logoSrc;
+    img.alt = "JH Attefallshus logotyp";
+    img.loading = "eager";
+    img.decoding = "async";
+    img.style.height = "34px";
+    img.style.width = "auto";
+    img.style.display = "block";
+
+    var text = document.createElement("span");
+    text.textContent = (target.textContent || "").trim() || "JH Attefallshus";
+
+    target.textContent = "";
+    target.appendChild(img);
+    target.appendChild(text);
   }
 
   function insertCredBand() {
@@ -909,6 +952,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     ensureHeroUpdate();
     applyHeroVariant();
+    applyHeaderLogo();
     ensureNavCta();
     insertCredBand();
     insertWhyUs();

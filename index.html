@@ -137,10 +137,23 @@
       gap: 14px;
     }
     .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       color: #fff;
       font-family: "Fraunces", serif;
       font-size: 1.2rem;
       font-weight: 700;
+    }
+    .logo img {
+      height: 34px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+    }
+    .logo span {
+      line-height: 1;
+      letter-spacing: 0.01em;
     }
     .nav-links {
       display: flex;
@@ -505,7 +518,10 @@
 
   <header class="site-header" aria-label="Huvudnavigation">
     <div class="wrap nav">
-      <a class="logo" href="/">JH Attefallshus</a>
+      <a class="logo" href="/" aria-label="JH Attefallshus - Startsida">
+        <img src="./logotyp-jh-attefallshus.png" alt="JH Attefallshus logotyp" loading="eager" decoding="async">
+        <span>JH Attefallshus</span>
+      </a>
       <nav class="nav-links" aria-label="Primar">
         <a href="/sida/om-oss">Om oss</a>
         <a href="/sida/inspiration">Inspiration</a>
