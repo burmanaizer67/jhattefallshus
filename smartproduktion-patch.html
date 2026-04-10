@@ -511,6 +511,16 @@
   function q(sel, root) { return (root || document).querySelector(sel); }
   function qa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
+  function getOfferHref() {
+    var defaultHref = "/offertf%C3%B6rfr%C3%A5gan";
+    var isGithubPages = /github\.io$/i.test(window.location.hostname || "");
+    if (!isGithubPages) return defaultHref;
+
+    var segments = (window.location.pathname || "/").split("/").filter(Boolean);
+    var repoBase = segments.length > 0 ? "/" + segments[0] : "";
+    return repoBase + "/#kontakt";
+  }
+
   function readHeroVariantFromQuery() {
     try {
       var params = new URLSearchParams(window.location.search);
@@ -556,7 +566,7 @@
     if (heroBtnText) heroBtnText.textContent = "Få offert nu";
 
     var heroBtn = q(".VideoHeader-video_header_8894 .SmartButton");
-    if (heroBtn) heroBtn.setAttribute("data-href", "/offertf%C3%B6rfr%C3%A5gan");
+    if (heroBtn) heroBtn.setAttribute("data-href", getOfferHref());
 
     var btnContainer = q(".VideoHeader-video_header_8894 .HeaderEntrance .mt-3");
     var heroContent = q(".VideoHeader-video_header_8894 .header-custom-html-content");
@@ -564,7 +574,7 @@
     if (!heroBtn && !q(".JHPrimaryHeroBtn")) {
       var primary = document.createElement("a");
       primary.className = "JHPrimaryHeroBtn";
-      primary.href = "/offertf%C3%B6rfr%C3%A5gan";
+      primary.href = getOfferHref();
       primary.textContent = "Få offert nu";
       primary.style.display = "inline-flex";
       primary.style.alignItems = "center";
@@ -629,7 +639,7 @@
   }
 
   function ensureNavCta() {
-    qa("a[href='/offertf%C3%B6rfr%C3%A5gan']").forEach(function (a) {
+    qa("a[href='/offertf%C3%B6rfr%C3%A5gan'], a[href$='#kontakt']").forEach(function (a) {
       if (a.textContent.trim().toLowerCase().indexOf("offert") === -1) {
         a.textContent = "Få offert";
       }
@@ -781,7 +791,7 @@
         + "<span class='JHBadge'>Snabb återkoppling</span>"
         + "<span class='JHBadge'>Personlig rådgivning</span>"
         + "</div>"
-        + "<a class='btn btn-primary btn-medium' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>"
+        + "<a class='btn btn-primary btn-medium' href='" + getOfferHref() + "'>Få offert nu</a>"
         + "</div>";
       models.insertAdjacentElement("afterend", section);
     }
@@ -806,7 +816,7 @@
       + "<div class='JHInlineContactInner' style='margin-top:12px;'>"
       + "<p>Redo att ta nästa steg?</p>"
       + "<div class='JHInlineContactBtns'>"
-      + "<a class='primary' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>"
+      + "<a class='primary' href='" + getOfferHref() + "'>Få offert nu</a>"
       + "<a class='secondary' href='/sida/kontakta-oss'>Kontakta oss</a>"
       + "</div>"
       + "</div>";
@@ -839,7 +849,7 @@
       + "<h2>Berätta vad du vill bygga så återkommer vi snabbt med offert</h2>"
       + "<p>Kort förfrågan räcker. Du får tydligt pris och nästa steg snabbt.</p>"
       + "<div class='JHBottomCTABtns'>"
-      + "<a class='primary' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>"
+      + "<a class='primary' href='" + getOfferHref() + "'>Få offert nu</a>"
       + "<a class='secondary' href='/sida/kontakta-oss'>Kontakta oss</a>"
       + "</div>"
       + "</div>";
@@ -853,7 +863,7 @@
     bar.className = "JHMobileStickyCTA";
     bar.innerHTML = ""
       + "<a class='a' href='tel:0702754702'>Ring</a>"
-      + "<a class='b' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>";
+      + "<a class='b' href='" + getOfferHref() + "'>Få offert nu</a>";
     document.body.appendChild(bar);
   }
 
@@ -867,7 +877,7 @@
       + "<div class='JHInlineContactInner'>"
       + "<p>Nöjd med det du ser? Ta nästa steg idag.</p>"
       + "<div class='JHInlineContactBtns'>"
-      + "<a class='primary' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>"
+      + "<a class='primary' href='" + getOfferHref() + "'>Få offert nu</a>"
       + "<a class='secondary' href='/sida/kontakta-oss'>Kontakta oss</a>"
       + "</div>"
       + "</div>";

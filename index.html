@@ -737,7 +737,7 @@
       </div>
     </section>
 
-    <section class="section" aria-label="Avslutande CTA">
+    <section class="section" id="kontakt" aria-label="Avslutande CTA">
       <div class="wrap cta-final">
         <p class="eyebrow" style="color:#d3e8ef;">Nästa steg</p>
         <h2>Berätta vad du vill bygga så återkommer vi snabbt med offert</h2>
@@ -823,7 +823,22 @@
         window.dataLayer.push({ event: "jh_hero_variant", variant: variant });
       }
 
+      function normalizeOfferLinksForGithubPages() {
+        var isGithubPages = /github\.io$/i.test(window.location.hostname);
+        if (!isGithubPages) return;
+
+        var repoBase = "";
+        var segments = (window.location.pathname || "/").split("/").filter(Boolean);
+        if (segments.length > 0) repoBase = "/" + segments[0];
+        var fallbackHref = repoBase + "/#kontakt";
+
+        Array.prototype.slice.call(document.querySelectorAll("a[href^='/offertf']")).forEach(function (a) {
+          a.setAttribute("href", fallbackHref);
+        });
+      }
+
       applyHeroVariant(resolveVariant());
+      normalizeOfferLinksForGithubPages();
     })();
   </script>
 </body>
