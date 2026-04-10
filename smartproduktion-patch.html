@@ -559,6 +559,34 @@
     if (heroBtn) heroBtn.setAttribute("data-href", "/offertf%C3%B6rfr%C3%A5gan");
 
     var btnContainer = q(".VideoHeader-video_header_8894 .HeaderEntrance .mt-3");
+    var heroContent = q(".VideoHeader-video_header_8894 .header-custom-html-content");
+
+    if (!heroBtn && !q(".JHPrimaryHeroBtn")) {
+      var primary = document.createElement("a");
+      primary.className = "JHPrimaryHeroBtn";
+      primary.href = "/offertf%C3%B6rfr%C3%A5gan";
+      primary.textContent = "Få offert nu";
+      primary.style.display = "inline-flex";
+      primary.style.alignItems = "center";
+      primary.style.justifyContent = "center";
+      primary.style.minHeight = "44px";
+      primary.style.padding = "0 18px";
+      primary.style.borderRadius = "999px";
+      primary.style.background = "linear-gradient(135deg, #c37c2b, #ab6b2a)";
+      primary.style.color = "#fff";
+      primary.style.fontWeight = "700";
+      primary.style.textDecoration = "none";
+
+      if (btnContainer) {
+        btnContainer.appendChild(primary);
+      } else if (heroContent) {
+        var row = document.createElement("div");
+        row.style.marginTop = "12px";
+        row.appendChild(primary);
+        heroContent.appendChild(row);
+      }
+    }
+
     if (btnContainer && !q(".JHSecondaryHeroBtn", btnContainer.parentNode)) {
       var sec = document.createElement("a");
       sec.className = "JHSecondaryHeroBtn btn btn-regular btn-medium";
@@ -585,11 +613,15 @@
     var titleEl = q(".VideoHeader-video_header_8894 .header-custom-html-content h1");
     var subEl = q(".VideoHeader-video_header_8894 .header-custom-html-content p.text-color-white");
     var btnTextEl = q(".VideoHeader-video_header_8894 .SmartButtonText");
+    var fallbackBtn = q(".JHPrimaryHeroBtn");
 
     if (variant === "b") {
       if (titleEl) titleEl.textContent = "Bygg Attefallshus snabbare med fast pris";
       if (subEl) subEl.textContent = "Välj modell, få tydligt pris och kom igång direkt.";
       if (btnTextEl) btnTextEl.textContent = "Se pris och få offert";
+      if (fallbackBtn) fallbackBtn.textContent = "Se pris och få offert";
+    } else if (fallbackBtn) {
+      fallbackBtn.textContent = "Få offert nu";
     }
 
     window.dataLayer = window.dataLayer || [];
