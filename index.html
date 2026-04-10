@@ -864,8 +864,20 @@
         });
       }
 
+      function enforceModelsCopy() {
+        var section = document.getElementById("modeller");
+        if (!section) return;
+
+        var h2 = section.querySelector("h2");
+        var p = section.querySelector(".wrap > p:not(.eyebrow)");
+
+        if (h2) h2.textContent = "Hitta rätt modell och få fast pris snabbt";
+        if (p) p.textContent = "Jämför våra populäraste modeller och skicka offertförfrågan direkt.";
+      }
+
       applyHeroVariant(resolveVariant());
       normalizeOfferLinksForPreview();
+      enforceModelsCopy();
     })();
   </script>
 </body>

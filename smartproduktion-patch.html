@@ -856,6 +856,24 @@
     }
   }
 
+  function enforceModelsCopy() {
+    var mappedTitle = "Hitta rätt modell och få fast pris snabbt";
+    var mappedBody = "Jämför våra populäraste modeller och ta nästa steg direkt.";
+
+    qa("h2").forEach(function (el) {
+      var t = (el.textContent || "").trim();
+      if (t === "Produkter: välj modell och gå vidare direkt" || t === "Alla husmodeller") {
+        el.textContent = mappedTitle;
+      }
+    });
+
+    var unified = q(".JHUnifiedModels");
+    if (unified) {
+      var p = q("p", unified);
+      if (p) p.textContent = mappedBody;
+    }
+  }
+
   function insertProcessBeforeReviews() {
     if (q(".JHProcess")) return;
     var reviews = q(".SmartReviews-reviews_8874");
@@ -959,6 +977,7 @@
     enhanceModelCards();
     consolidateAllImagesIntoOneSection();
     insertUnifiedAfterCta();
+    enforceModelsCopy();
     insertProcessBeforeReviews();
     insertContactAfterReviews();
     tuneFaqCopy();
