@@ -523,11 +523,11 @@
       <div class="wrap hero-grid">
         <div>
           <p class="eyebrow">Attefallshus från Stockholm till Halmstad</p>
-          <h1>Nyckelfärdiga Attefallshus med fast pris och trygg process</h1>
-          <p>Från idé till färdigt hus med fast pris, tydlig plan och snabb återkoppling.</p>
+          <h1 id="hero-title">Nyckelfärdiga Attefallshus med fast pris och trygg process</h1>
+          <p id="hero-subtitle">Från idé till färdigt hus med fast pris, tydlig plan och snabb återkoppling.</p>
 
           <div class="btn-row">
-            <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Få offert nu</a>
+            <a class="btn primary" id="hero-primary-cta" href="/offertf%C3%B6rfr%C3%A5gan">Få offert nu</a>
             <a class="btn ghost" href="#modeller">Se våra husmodeller</a>
           </div>
 
@@ -768,5 +768,63 @@
     <a class="btn ghost" href="tel:+46702754702">Ring</a>
     <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Få offert</a>
   </div>
+
+  <script>
+    (function () {
+      var variants = {
+        a: {
+          title: "Nyckelfärdiga Attefallshus med fast pris och trygg process",
+          subtitle: "Från idé till färdigt hus med fast pris, tydlig plan och snabb återkoppling.",
+          cta: "Få offert nu"
+        },
+        b: {
+          title: "Bygg Attefallshus snabbare med fast pris",
+          subtitle: "Välj modell, få tydligt pris och kom igång direkt.",
+          cta: "Se pris och få offert"
+        }
+      };
+
+      function readVariantFromQuery() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var v = (params.get("ab") || "").toLowerCase();
+          if (v === "hero-a") return "a";
+          if (v === "hero-b") return "b";
+        } catch (e) {}
+        return "";
+      }
+
+      function resolveVariant() {
+        var fromQuery = readVariantFromQuery();
+        if (fromQuery) {
+          localStorage.setItem("jh_hero_variant", fromQuery);
+          return fromQuery;
+        }
+
+        var stored = localStorage.getItem("jh_hero_variant");
+        if (stored === "a" || stored === "b") return stored;
+
+        var assigned = Math.random() < 0.5 ? "a" : "b";
+        localStorage.setItem("jh_hero_variant", assigned);
+        return assigned;
+      }
+
+      function applyHeroVariant(variant) {
+        var conf = variants[variant] || variants.a;
+        var title = document.getElementById("hero-title");
+        var subtitle = document.getElementById("hero-subtitle");
+        var cta = document.getElementById("hero-primary-cta");
+
+        if (title) title.textContent = conf.title;
+        if (subtitle) subtitle.textContent = conf.subtitle;
+        if (cta) cta.textContent = conf.cta;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "jh_hero_variant", variant: variant });
+      }
+
+      applyHeroVariant(resolveVariant());
+    })();
+  </script>
 </body>
 </html>

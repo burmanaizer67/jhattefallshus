@@ -511,6 +511,31 @@
   function q(sel, root) { return (root || document).querySelector(sel); }
   function qa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
+  function readHeroVariantFromQuery() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var v = (params.get("ab") || "").toLowerCase();
+      if (v === "hero-a") return "a";
+      if (v === "hero-b") return "b";
+    } catch (e) {}
+    return "";
+  }
+
+  function resolveHeroVariant() {
+    var fromQuery = readHeroVariantFromQuery();
+    if (fromQuery) {
+      localStorage.setItem("jh_hero_variant", fromQuery);
+      return fromQuery;
+    }
+
+    var stored = localStorage.getItem("jh_hero_variant");
+    if (stored === "a" || stored === "b") return stored;
+
+    var assigned = Math.random() < 0.5 ? "a" : "b";
+    localStorage.setItem("jh_hero_variant", assigned);
+    return assigned;
+  }
+
   function safeSetText(sel, text) {
     var el = q(sel);
     if (el) el.textContent = text;
@@ -553,6 +578,22 @@
         + "<div class='JHTrustQuickItem'>Erfaren byggpartner</div>";
       trustSlot.appendChild(wrap);
     }
+  }
+
+  function applyHeroVariant() {
+    var variant = resolveHeroVariant();
+    var titleEl = q(".VideoHeader-video_header_8894 .header-custom-html-content h1");
+    var subEl = q(".VideoHeader-video_header_8894 .header-custom-html-content p.text-color-white");
+    var btnTextEl = q(".VideoHeader-video_header_8894 .SmartButtonText");
+
+    if (variant === "b") {
+      if (titleEl) titleEl.textContent = "Bygg Attefallshus snabbare med fast pris";
+      if (subEl) subEl.textContent = "Välj modell, få tydligt pris och kom igång direkt.";
+      if (btnTextEl) btnTextEl.textContent = "Se pris och få offert";
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "jh_hero_variant", variant: variant });
   }
 
   function ensureNavCta() {
@@ -804,6 +845,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     ensureHeroUpdate();
+    applyHeroVariant();
     ensureNavCta();
     insertCredBand();
     insertWhyUs();
