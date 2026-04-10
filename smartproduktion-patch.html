@@ -545,6 +545,21 @@
     return repoBase + "/#kontakt";
   }
 
+  function getModelHref(slug) {
+    var safeSlug = (slug || "").replace(/^\/+|\/+$/g, "");
+    if (!safeSlug) return "/";
+
+    var isGithubPages = /github\.io$/i.test(window.location.hostname || "");
+    var isFilePreview = (window.location.protocol || "") === "file:";
+
+    if (isFilePreview) return "./attefallshus/" + safeSlug + "/";
+    if (!isGithubPages) return "/attefallshus/" + safeSlug;
+
+    var segments = (window.location.pathname || "/").split("/").filter(Boolean);
+    var repoBase = segments.length > 0 ? "/" + segments[0] : "";
+    return repoBase + "/attefallshus/" + safeSlug + "/";
+  }
+
   function normalizeOfferLinksForPreview() {
     var offerHref = getOfferHref();
     if (offerHref === "/offertf%C3%B6rfr%C3%A5gan") return;
@@ -794,7 +809,7 @@
       // Hide all original content sections that include house cards to avoid split layout.
       qa(".ServicesInline, .OnlySectionArticles, .LargeBlockWithMultipleItems").forEach(function (section) {
         if (section.contains(unified) || section === unified) return;
-        if (q("a[href*='/attefallshus/']", section)) {
+        if (q("a[href*='attefallshus']", section)) {
           section.style.display = "none";
         }
       });
@@ -803,13 +818,13 @@
     consolidateAllHouseCards();
 
     var modelMap = {
-      "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr", href: "/attefallshus/solglanta-30" },
-      "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr", href: "/attefallshus/manviken-40" },
-      "Vindhagen 50": { size: "50 m2", use: "Familj/Kontor", price: "Pris från 1 395 000 kr", href: "/attefallshus/vindhagen-50" },
-      "Stjarnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", href: "/attefallshus/stjarnvik-50" },
-      "Stjärnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", href: "/attefallshus/stjarnvik-50" },
-      "Fjordhem 76": { size: "76 m2", use: "Familjeboende", price: "Pris från 1 995 000 kr", href: "/attefallshus/fjordhem-76" },
-      "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris från 2 495 000 kr", href: "/attefallshus/solmark-120" }
+      "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr", slug: "solglanta-30" },
+      "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr", slug: "manviken-40" },
+      "Vindhagen 50": { size: "50 m2", use: "Familj/Kontor", price: "Pris från 1 395 000 kr", slug: "vindhagen-50" },
+      "Stjarnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", slug: "stjarnvik-50" },
+      "Stjärnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", slug: "stjarnvik-50" },
+      "Fjordhem 76": { size: "76 m2", use: "Familjeboende", price: "Pris från 1 995 000 kr", slug: "fjordhem-76" },
+      "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris från 2 495 000 kr", slug: "solmark-120" }
     };
 
     function normalizeModelTitle(title) {
@@ -847,14 +862,16 @@
       if (!img) return;
 
       var imgAnchor = img.closest("a");
+      var modelHref = getModelHref(meta.slug);
+
       if (imgAnchor) {
-        imgAnchor.href = meta.href;
+        imgAnchor.href = modelHref;
         imgAnchor.classList.add("JHModelImageLink");
         imgAnchor.setAttribute("aria-label", title + " - läs mer");
       } else {
         var link = document.createElement("a");
         link.className = "JHModelImageLink";
-        link.href = meta.href;
+        link.href = modelHref;
         link.setAttribute("aria-label", title + " - läs mer");
         img.parentNode.insertBefore(link, img);
         link.appendChild(img);
