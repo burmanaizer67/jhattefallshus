@@ -302,6 +302,8 @@
       display: flex;
       flex-direction: column;
     }
+    .model-media-link { display: block; }
+    .model-media-link:focus-visible { outline: 3px solid #8ab8ce; outline-offset: -3px; }
     .model-media { aspect-ratio: 4 / 3; object-fit: cover; }
     .model-body { padding: 16px; display: grid; gap: 10px; }
     .meta {
@@ -606,7 +608,9 @@
 
         <div class="models" role="list" aria-label="Husmodeller">
           <article class="model-card" role="listitem">
-            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/465/large/jh-byggmastare-ab-bild.jpg" alt="Solglanta 30 exterior">
+            <a class="model-media-link" href="/attefallshus/solglanta-30" aria-label="Solglänta 30 - läs mer">
+              <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/465/large/jh-byggmastare-ab-bild.jpg" alt="Solglanta 30 exterior">
+            </a>
             <div class="model-body">
               <h3>Solglanta 30</h3>
               <div class="meta"><span class="badge">30 m2</span><span class="badge">Loft</span><span class="badge">Permanent/Gasthus</span></div>
@@ -617,7 +621,9 @@
           </article>
 
           <article class="model-card" role="listitem">
-            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/476/large/foretagsbild-fran-jh-byggmastare-ab.jpg" alt="Manviken 40 exterior">
+            <a class="model-media-link" href="/attefallshus/manviken-40" aria-label="Manviken 40 - läs mer">
+              <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/476/large/foretagsbild-fran-jh-byggmastare-ab.jpg" alt="Manviken 40 exterior">
+            </a>
             <div class="model-body">
               <h3>Manviken 40</h3>
               <div class="meta"><span class="badge">40 m2</span><span class="badge">Fritid/Uthyrning</span><span class="badge">Ljus planlösning</span></div>
@@ -628,7 +634,9 @@
           </article>
 
           <article class="model-card" role="listitem">
-            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/486/large/foretagsbild-fran-jh-byggmastare-ab.jpg" alt="Vindhagen 50 exterior">
+            <a class="model-media-link" href="/attefallshus/vindhagen-50" aria-label="Vindhagen 50 - läs mer">
+              <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/486/large/foretagsbild-fran-jh-byggmastare-ab.jpg" alt="Vindhagen 50 exterior">
+            </a>
             <div class="model-body">
               <h3>Vindhagen 50</h3>
               <div class="meta"><span class="badge">50 m2</span><span class="badge">Familj/Kontor</span><span class="badge">Hög takhöjd</span></div>
@@ -639,7 +647,9 @@
           </article>
 
           <article class="model-card" role="listitem">
-            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/488/large/jh-byggmastare-ab-bild-2026.jpg" alt="Projekt Vindhagen 50 i skogsmiljö">
+            <a class="model-media-link" href="/attefallshus/vindhagen-50" aria-label="Vindhagen 50 - läs mer">
+              <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/488/large/jh-byggmastare-ab-bild-2026.jpg" alt="Projekt Vindhagen 50 i skogsmiljö">
+            </a>
             <div class="model-body">
               <h3>Vindhagen 50</h3>
               <p>Ljust familjeboende med loft och tydlig zonering.</p>
@@ -648,7 +658,9 @@
           </article>
 
           <article class="model-card" role="listitem">
-            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/518/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Stjärnvik 50 med träfasad">
+            <a class="model-media-link" href="/attefallshus/stjarnvik-50" aria-label="Stjärnvik 50 - läs mer">
+              <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/518/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Stjärnvik 50 med träfasad">
+            </a>
             <div class="model-body">
               <h3>Stjärnvik 50</h3>
               <p>Modern premiumkänsla med naturmaterial och funktion.</p>
@@ -657,7 +669,9 @@
           </article>
 
           <article class="model-card" role="listitem">
-            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/551/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Solmark 120 med stor uteplats">
+            <a class="model-media-link" href="/attefallshus/solmark-120" aria-label="Solmark 120 - läs mer">
+              <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/551/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Solmark 120 med stor uteplats">
+            </a>
             <div class="model-body">
               <h3>Solmark 120</h3>
               <p>Rymlig modell med fokus på permanentboende och ljus.</p>

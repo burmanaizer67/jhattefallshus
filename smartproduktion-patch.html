@@ -150,6 +150,15 @@
     object-fit: cover;
   }
 
+  .JHModelImageLink {
+    display: block;
+  }
+
+  .JHModelImageLink:focus-visible {
+    outline: 3px solid #8ab8ce;
+    outline-offset: -3px;
+  }
+
   .JHUnifiedAfterCTA {
     max-width: 1280px;
     margin: 0 auto 40px;
@@ -794,13 +803,21 @@
     consolidateAllHouseCards();
 
     var modelMap = {
-      "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr" },
-      "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr" },
-      "Vindhagen 50": { size: "50 m2", use: "Familj/Kontor", price: "Pris från 1 395 000 kr" },
-      "Stjarnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr" },
-      "Fjordhem 76": { size: "76 m2", use: "Familjeboende", price: "Pris från 1 995 000 kr" },
-      "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris från 2 495 000 kr" }
+      "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr", href: "/attefallshus/solglanta-30" },
+      "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr", href: "/attefallshus/manviken-40" },
+      "Vindhagen 50": { size: "50 m2", use: "Familj/Kontor", price: "Pris från 1 395 000 kr", href: "/attefallshus/vindhagen-50" },
+      "Stjarnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", href: "/attefallshus/stjarnvik-50" },
+      "Stjärnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", href: "/attefallshus/stjarnvik-50" },
+      "Fjordhem 76": { size: "76 m2", use: "Familjeboende", price: "Pris från 1 995 000 kr", href: "/attefallshus/fjordhem-76" },
+      "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris från 2 495 000 kr", href: "/attefallshus/solmark-120" }
     };
+
+    function normalizeModelTitle(title) {
+      return (title || "")
+        .trim()
+        .replace(/[åä]/gi, "a")
+        .replace(/[ö]/gi, "o");
+    }
 
     qa(".JHUnifiedModels article, .ServicesInline-services_inline_5282 article").forEach(function (card) {
       if (q(".JHModelMeta", card)) return;
@@ -808,7 +825,7 @@
       var titleEl = q("h3", card);
       if (!titleEl) return;
       var title = (titleEl.textContent || "").trim();
-      var meta = modelMap[title];
+      var meta = modelMap[title] || modelMap[normalizeModelTitle(title)];
       if (!meta) return;
 
       var wrap = q(".article-content-wrapper", card);
@@ -825,6 +842,23 @@
       var p = q("p", wrap);
       if (p) p.insertAdjacentElement("afterend", metaEl);
       metaEl.insertAdjacentElement("afterend", priceEl);
+
+      var img = q("img", card);
+      if (!img) return;
+
+      var imgAnchor = img.closest("a");
+      if (imgAnchor) {
+        imgAnchor.href = meta.href;
+        imgAnchor.classList.add("JHModelImageLink");
+        imgAnchor.setAttribute("aria-label", title + " - läs mer");
+      } else {
+        var link = document.createElement("a");
+        link.className = "JHModelImageLink";
+        link.href = meta.href;
+        link.setAttribute("aria-label", title + " - läs mer");
+        img.parentNode.insertBefore(link, img);
+        link.appendChild(img);
+      }
     });
 
     var oldCta = q(".JHSectionCTA");
