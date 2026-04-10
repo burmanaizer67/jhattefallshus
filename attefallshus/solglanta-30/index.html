@@ -4,21 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Solglänta 30 | JH Attefallshus</title>
-  <meta name="description" content="Solglänta 30 - kompakt attefallshus med smart planering och tydlig prisbild.">
+  <meta name="description" content="Solglänta 30 - kompakt attefallshus med smart planlösning, tydlig prisbild och många användningsområden.">
   <link rel="icon" type="image/png" href="../../logotyp-jh-attefallshus.png">
   <style>
-    body { margin: 0; font-family: "Source Sans 3", Arial, sans-serif; background: #f7f4ef; color: #1f2a2e; }
-    .wrap { width: min(980px, 92vw); margin: 0 auto; }
-    header { background: #16313d; color: #fff; padding: 14px 0; }
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --line: #ddd5c8;
+      --text: #1f2a2e;
+      --muted: #4f5b60;
+      --brand: #16313d;
+      --accent: #bf7a33;
+      --radius: 14px;
+    }
+    body { margin: 0; font-family: "Source Sans 3", Arial, sans-serif; background: var(--bg); color: var(--text); }
+    .wrap { width: min(1080px, 92vw); margin: 0 auto; }
+    header { background: var(--brand); color: #fff; padding: 14px 0; }
     .logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; }
     .logo img { height: 32px; width: auto; }
     main { padding: 34px 0 56px; }
-    .card { background: #fff; border: 1px solid #ddd5c8; border-radius: 14px; padding: 18px; margin-top: 16px; }
-    .hero-img { width: 100%; border-radius: 14px; border: 1px solid #ddd5c8; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: start; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-top: 16px; }
+    .hero-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.88rem; font-weight: 700; color: #1f5a70; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.14; }
+    h1 { font-family: "Fraunces", serif; font-size: clamp(2rem, 4vw, 3rem); }
+    h2 { font-family: "Fraunces", serif; font-size: clamp(1.35rem, 2.7vw, 2rem); }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .fact { background: #f5f1ea; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+    .fact strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .bullet-list { margin: 0; padding-left: 18px; color: var(--muted); }
+    .bullet-list li { margin-bottom: 6px; }
     .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
     .btn { min-height: 44px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center; text-decoration: none; font-weight: 700; }
-    .primary { background: #bf7a33; color: #fff; }
+    .primary { background: var(--accent); color: #fff; }
     .ghost { background: #eef3f5; color: #173f4f; border: 1px solid #c6d3d9; }
+    .cta-card { background: linear-gradient(120deg, rgba(22, 49, 61, 0.95), rgba(30, 87, 106, 0.92)); color: #fff; }
+    .cta-card p { color: #dce7ec; }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .facts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -31,21 +58,59 @@
     </div>
   </header>
   <main class="wrap">
-    <h1>Solglänta 30</h1>
-    <p>En yteffektiv modell for dig som vill ha ett smart gasthus eller uthyrningsboende med snabb process.</p>
-    <img class="hero-img" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/465/large/jh-byggmastare-ab-bild.jpg" alt="Solglänta 30">
+    <p class="eyebrow">Attefallshus 30 m2</p>
+    <div class="hero-grid">
+      <div>
+        <h1>Solglänta 30</h1>
+        <p>En yteffektiv modell för dig som vill ha ett smart gästhus, uthyrningsboende eller hemmakontor med tydlig planlösning och snabb väg till beslut.</p>
+        <div class="facts">
+          <div class="fact"><strong>Storlek</strong><span>30 m2</span></div>
+          <div class="fact"><strong>Prisnivå</strong><span>Från 995 000 kr</span></div>
+          <div class="fact"><strong>Passar för</strong><span>Gästhus, uthyrning, kontor</span></div>
+        </div>
+        <div class="row">
+          <a class="btn primary" href="../../index.html#kontakt">Få offert på Solglänta 30</a>
+          <a class="btn ghost" href="../../index.html">Till startsidan</a>
+        </div>
+      </div>
+      <div>
+        <img class="hero-img" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/465/large/jh-byggmastare-ab-bild.jpg" alt="Solglänta 30 exteriör">
+      </div>
+    </div>
+
     <section class="card">
-      <h2>Snabbfakta</h2>
-      <p>Storlek: 30 m2</p>
-      <p>Anvandning: Gasthus, uthyrning, hemmakontor</p>
-      <p>Prisniva: fran 995 000 kr</p>
+      <h2>Om modellen</h2>
+      <p>Solglänta 30 är framtagen för dig som vill få mycket funktion på liten yta. Modellen fungerar bra när du vill skapa ett extra boende på tomten utan att projektet känns onödigt stort eller komplicerat.</p>
+      <p>Den är särskilt intressant för dig som vill jämföra en tydlig prisnivå med hög upplevd nytta, oavsett om målet är att skapa plats för gäster, familj eller framtida hyresintäkt.</p>
     </section>
+
     <section class="card">
       <h2>Varför välja Solglänta 30?</h2>
-      <p>Kompakt format med tydlig planlosning och god vardagsfunktion. Latt att placera pa mindre tomter.</p>
+      <ul class="bullet-list">
+        <li>Kompakt format som är lätt att placera på mindre tomter.</li>
+        <li>Tydlig planlösning med bra vardagsfunktion.</li>
+        <li>Passar både privat användning och uthyrning.</li>
+        <li>En modell som är enkel att förstå, jämföra och ta beslut om.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Vanliga användningsområden</h2>
+      <p>Solglänta 30 passar dig som vill skapa:</p>
+      <ul class="bullet-list">
+        <li>ett gästhus för familj och vänner</li>
+        <li>ett generationsboende nära huvudbyggnaden</li>
+        <li>ett separat hemmakontor med lugn arbetsmiljö</li>
+        <li>ett uthyrningsboende med tydlig investeringslogik</li>
+      </ul>
+    </section>
+
+    <section class="card cta-card">
+      <h2>Nästa steg</h2>
+      <p>Vill du veta om Solglänta 30 passar din tomt, budget och användning? Skicka en kort förfrågan så återkommer vi med tydlig vägledning och prisbild.</p>
       <div class="row">
         <a class="btn primary" href="../../index.html#kontakt">Få offert nu</a>
-        <a class="btn ghost" href="../../index.html">Till startsidan</a>
+        <a class="btn ghost" href="../manviken-40/">Jämför med Månviken 40</a>
       </div>
     </section>
   </main>
