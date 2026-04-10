@@ -113,6 +113,130 @@
     font-size: 0.96rem;
   }
 
+  .JHUnifiedModels {
+    max-width: 1280px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+  }
+
+  .JHUnifiedModels h2 {
+    margin: 0 0 12px;
+  }
+
+  .JHUnifiedModels .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .JHUnifiedModels .article-card {
+    width: 100%;
+  }
+
+  .JHUnifiedModels .article-content-wrapper,
+  .JHUnifiedModels .model-body,
+  .JHUnifiedModels h3,
+  .JHUnifiedModels p,
+  .JHUnifiedModels .btn,
+  .JHUnifiedModels .JHModelMeta,
+  .JHUnifiedModels .JHPriceFrom {
+    display: none !important;
+  }
+
+  .JHUnifiedModels img {
+    aspect-ratio: 16 / 8;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .JHUnifiedAfterCTA {
+    max-width: 1280px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+  }
+
+  .JHUnifiedAfterCTAInner {
+    border: 1px solid var(--jh-line);
+    border-radius: var(--jh-radius);
+    background: #fff;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .JHUnifiedAfterProof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .JHUnifiedAfterProof .JHBadge {
+    background: #eef2f4;
+    border-color: #d6e0e5;
+  }
+
+  .JHUnifiedImages {
+    max-width: 1280px;
+    margin: 0 auto 44px;
+    padding: 0 16px;
+  }
+
+  .JHUnifiedImages h2 {
+    margin: 0 0 8px;
+  }
+
+  .JHUnifiedImages p {
+    margin: 0 0 14px;
+    color: var(--jh-muted);
+  }
+
+  .JHUnifiedImageGrid {
+    columns: 2;
+    column-gap: 14px;
+  }
+
+  .JHUnifiedImageItem {
+    break-inside: avoid;
+    margin: 0 0 14px;
+    display: block;
+    border-radius: var(--jh-radius);
+    overflow: hidden;
+    border: 1px solid var(--jh-line);
+    background: #fff;
+  }
+
+  .JHUnifiedImageItem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .JHUnifiedImageGrid {
+      columns: 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .JHUnifiedModels .article-card {
+      width: 100%;
+    }
+
+    .JHUnifiedAfterCTAInner {
+      align-items: stretch;
+    }
+
+    .JHUnifiedAfterCTAInner .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
   .ServicesInline [class*="article-card-services_inline"] .article-content-wrapper {
     display: grid;
     gap: 8px;
@@ -399,6 +523,54 @@
   }
 
   function enhanceModelCards() {
+    // Collect cards from model and project blocks and place all images in one section.
+    function consolidateAllHouseCards() {
+      var sourceCards = [];
+      var seenImage = {};
+
+      qa(".ServicesInline-services_inline_5282 article, .OnlySectionArticles .SectionArticle, .LargeBlockWithMultipleItems .SectionArticle").forEach(function (card) {
+        var img = q("img", card);
+        if (!img) return;
+        var src = (img.getAttribute("src") || "").split("?")[0];
+        if (!src || seenImage[src]) return;
+        seenImage[src] = true;
+        sourceCards.push(card);
+      });
+
+      if (!sourceCards.length) return;
+
+      var insertionPoint = q(".JHWhyUs") || q(".OurServices") || q(".ServicesInline-services_inline_5282");
+      if (!insertionPoint) return;
+
+      var unified = q(".JHUnifiedModels");
+      if (!unified) {
+        unified = document.createElement("section");
+        unified.className = "JHUnifiedModels";
+        unified.innerHTML = "<h2>Alla husmodeller</h2><div class='services-grid'></div>";
+        insertionPoint.insertAdjacentElement("afterend", unified);
+      }
+
+      var grid = q(".services-grid", unified);
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      sourceCards.slice(0, 6).forEach(function (card) {
+        var clone = card.cloneNode(true);
+        clone.classList.add("JHUnifiedCard");
+        grid.appendChild(clone);
+      });
+
+      // Hide all original content sections that include house cards to avoid split layout.
+      qa(".ServicesInline, .OnlySectionArticles, .LargeBlockWithMultipleItems").forEach(function (section) {
+        if (section.contains(unified) || section === unified) return;
+        if (q("a[href*='/attefallshus/']", section)) {
+          section.style.display = "none";
+        }
+      });
+    }
+
+    consolidateAllHouseCards();
+
     var modelMap = {
       "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr" },
       "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr" },
@@ -408,7 +580,7 @@
       "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris från 2 495 000 kr" }
     };
 
-    qa(".ServicesInline-services_inline_5282 article").forEach(function (card) {
+    qa(".JHUnifiedModels article, .ServicesInline-services_inline_5282 article").forEach(function (card) {
       if (q(".JHModelMeta", card)) return;
 
       var titleEl = q("h3", card);
@@ -433,12 +605,32 @@
       metaEl.insertAdjacentElement("afterend", priceEl);
     });
 
-    var servicesSection = q(".ServicesInline-services_inline_5282");
-    if (servicesSection && !q(".JHSectionCTA")) {
-      var cta = document.createElement("div");
-      cta.className = "JHSectionCTA";
-      cta.innerHTML = "<a href='/offertf%C3%B6rfr%C3%A5gan'>Få offert på rätt modell</a>";
-      servicesSection.insertAdjacentElement("afterend", cta);
+    var oldCta = q(".JHSectionCTA");
+    if (oldCta) oldCta.remove();
+  }
+
+  function consolidateAllImagesIntoOneSection() {
+    // Legacy no-op: image unification is now handled in enhanceModelCards.
+  }
+
+  function insertUnifiedAfterCta() {
+    var models = q(".JHUnifiedModels");
+    if (!models) return;
+
+    var section = q(".JHUnifiedAfterCTA");
+    if (!section) {
+      section = document.createElement("section");
+      section.className = "JHUnifiedAfterCTA";
+      section.innerHTML = ""
+        + "<div class='JHUnifiedAfterCTAInner'>"
+        + "<div class='JHUnifiedAfterProof'>"
+        + "<span class='JHBadge'>Fast pris</span>"
+        + "<span class='JHBadge'>Snabb återkoppling</span>"
+        + "<span class='JHBadge'>Personlig rådgivning</span>"
+        + "</div>"
+        + "<a class='btn btn-primary btn-medium' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert på din modell</a>"
+        + "</div>";
+      models.insertAdjacentElement("afterend", section);
     }
   }
 
@@ -511,6 +703,8 @@
     insertCredBand();
     insertWhyUs();
     enhanceModelCards();
+    consolidateAllImagesIntoOneSection();
+    insertUnifiedAfterCta();
     insertProcessBeforeReviews();
     tuneFaqCopy();
     insertBottomCtaBeforeFooter();

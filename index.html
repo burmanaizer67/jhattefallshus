@@ -239,6 +239,40 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
+
+    #modeller .models {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    #modeller .model-card .model-body {
+      display: none;
+    }
+
+    #modeller .model-media {
+      aspect-ratio: 16 / 8;
+    }
+    .models-cta-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .models-cta-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .models-cta-proof .badge {
+      background: #eef2f4;
+      border: 1px solid #d6e0e5;
+    }
     .model-card {
       background: #fff;
       border: 1px solid var(--line);
@@ -578,12 +612,44 @@
               <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Be om offert</a>
             </div>
           </article>
+
+          <article class="model-card" role="listitem">
+            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/488/large/jh-byggmastare-ab-bild-2026.jpg" alt="Projekt Vindhagen 50 i skogsmiljö">
+            <div class="model-body">
+              <h3>Vindhagen 50</h3>
+              <p>Ljust familjeboende med loft och tydlig zonering.</p>
+              <a class="btn ghost" href="/sida/inspiration">Se projekt</a>
+            </div>
+          </article>
+
+          <article class="model-card" role="listitem">
+            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/518/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Stjärnvik 50 med träfasad">
+            <div class="model-body">
+              <h3>Stjärnvik 50</h3>
+              <p>Modern premiumkänsla med naturmaterial och funktion.</p>
+              <a class="btn ghost" href="/sida/inspiration">Se projekt</a>
+            </div>
+          </article>
+
+          <article class="model-card" role="listitem">
+            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/551/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Solmark 120 med stor uteplats">
+            <div class="model-body">
+              <h3>Solmark 120</h3>
+              <p>Rymlig modell med fokus på permanentboende och ljus.</p>
+              <a class="btn ghost" href="/sida/inspiration">Se projekt</a>
+            </div>
+          </article>
         </div>
 
-        <div class="btn-row" style="margin-top:24px;">
-          <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Få offert på rätt modell</a>
-          <a class="btn ghost" href="/vara-tjanster/attefallshus">Se alla husmodeller</a>
+        <div class="models-cta-row" aria-label="Nästa steg efter modeller">
+          <div class="models-cta-proof">
+            <span class="badge">Fast pris</span>
+            <span class="badge">Snabb återkoppling</span>
+            <span class="badge">Personlig rådgivning</span>
+          </div>
+          <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Få offert på din modell</a>
         </div>
+
       </div>
     </section>
 
@@ -626,27 +692,6 @@
           <article class="review"><div class="stars" aria-label="5 av 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Vi uppskattade fast pris, tydliga delmål och att allt kändes valorganiserat."</p><strong>Tobias M, Halmstad</strong></article>
         </div>
         <div class="btn-row"><a class="btn ghost" href="/sida/recensioner">Las fler recensioner</a></div>
-      </div>
-    </section>
-
-    <section class="section" id="projekt">
-      <div class="wrap">
-        <p class="eyebrow">Tidigare projekt</p>
-        <h2>Exklusiv projektvy med större bilder och tydlig kontext</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <img loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/488/large/jh-byggmastare-ab-bild-2026.jpg" alt="Projekt Vindhagen 50 i skogsmiljö">
-            <div style="padding:14px;"><h3>Vindhagen 50</h3><p>Ljust familjeboende med loft och tydlig zonering.</p><a class="link-chip" href="/sida/inspiration">Se projekt</a></div>
-          </article>
-          <article class="project-card">
-            <img loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/518/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Stjärnvik 50 med träfasad">
-            <div style="padding:14px;"><h3>Stjärnvik 50</h3><p>Modern premiumkänsla med naturmaterial och funktion.</p><a class="link-chip" href="/sida/inspiration">Se projekt</a></div>
-          </article>
-          <article class="project-card">
-            <img loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/551/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Solmark 120 med stor uteplats">
-            <div style="padding:14px;"><h3>Solmark 120</h3><p>Rymlig modell med fokus på permanentboende och ljus.</p><a class="link-chip" href="/sida/inspiration">Se projekt</a></div>
-          </article>
-        </div>
       </div>
     </section>
 
