@@ -817,6 +817,8 @@
 
     consolidateAllHouseCards();
 
+    var fjordhemImageSrc = "https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/544/large/bild-fran-jh-byggmastare-ab.jpg?1773065840";
+
     var modelMap = {
       "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr", slug: "solglanta-30" },
       "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr", slug: "manviken-40" },
@@ -870,6 +872,11 @@
 
       var imgAnchor = img.closest("a");
       var modelHref = getModelHref(meta.slug);
+
+      if (meta.slug === "fjordhem-76") {
+        img.src = fjordhemImageSrc;
+        img.alt = "Fjordhem 76";
+      }
 
       if (imgAnchor) {
         imgAnchor.href = modelHref;
