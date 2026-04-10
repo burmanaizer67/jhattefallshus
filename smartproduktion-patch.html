@@ -1,0 +1,520 @@
+<!-- Smartproduktion Conversion Patch for jhattefallshus.se -->
+<style>
+  :root {
+    --jh-bg-soft: #f7f4ef;
+    --jh-surface: #ffffff;
+    --jh-text: #1f2a2e;
+    --jh-muted: #546269;
+    --jh-brand: #1f5a70;
+    --jh-brand-dark: #173f4f;
+    --jh-accent: #bf7a33;
+    --jh-line: #ddd5c8;
+    --jh-radius: 14px;
+  }
+
+  body {
+    background: radial-gradient(900px 380px at 8% -10%, #efe7db 0%, transparent 65%), var(--jh-bg-soft) !important;
+  }
+
+  .StickyNavigation nav a.btn,
+  .StickyNavigation nav a.navButton,
+  .SmartButtonVariantPrimary {
+    background: linear-gradient(135deg, var(--jh-accent), #ab6b2a) !important;
+    border-color: #ab6b2a !important;
+    color: #fff !important;
+  }
+
+  .VideoHeader-video_header_8894 .header-background-opacity {
+    background: linear-gradient(70deg, rgba(10, 24, 31, 0.88), rgba(10, 24, 31, 0.25)) !important;
+  }
+
+  .VideoHeader-video_header_8894 .header-custom-html-content p {
+    max-width: 64ch;
+  }
+
+  .JHTrustQuick {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 780px;
+  }
+
+  .JHTrustQuickItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.95rem;
+    padding: 0 12px;
+    font-weight: 600;
+  }
+
+  .JHCredBand {
+    margin: -18px auto 48px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .JHCredBandInner {
+    max-width: 1280px;
+    margin: 0 auto;
+    border: 1px solid var(--jh-line);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(20, 28, 34, 0.09);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .JHCredItem {
+    padding: 16px 14px;
+    border-right: 1px solid var(--jh-line);
+  }
+
+  .JHCredItem:last-child { border-right: 0; }
+  .JHCredItem strong { display: block; color: var(--jh-text); font-size: 1.05rem; }
+  .JHCredItem span { color: var(--jh-muted); font-size: 0.92rem; }
+
+  .JHWhyUs {
+    max-width: 1280px;
+    margin: 0 auto 48px;
+    padding: 0 16px;
+  }
+
+  .JHWhyUsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .JHWhyCard {
+    border: 1px solid var(--jh-line);
+    border-radius: var(--jh-radius);
+    padding: 16px;
+    background: #fff;
+  }
+
+  .JHWhyCard h3 {
+    margin: 0 0 8px;
+    color: var(--jh-text);
+    font-size: 1.08rem;
+  }
+
+  .JHWhyCard p {
+    margin: 0;
+    color: var(--jh-muted);
+    font-size: 0.96rem;
+  }
+
+  .ServicesInline [class*="article-card-services_inline"] .article-content-wrapper {
+    display: grid;
+    gap: 8px;
+  }
+
+  .JHModelMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .JHBadge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    border-radius: 999px;
+    padding: 0 10px;
+    background: #eef2f4;
+    border: 1px solid #d6e0e5;
+    color: #324047;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .JHPriceFrom {
+    font-weight: 700;
+    color: #24343b;
+    font-size: 1.02rem;
+    margin-top: 2px;
+  }
+
+  .JHSectionCTA {
+    max-width: 1280px;
+    margin: 16px auto 44px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .JHSectionCTA a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border-radius: 999px;
+    padding: 0 18px;
+    background: linear-gradient(135deg, var(--jh-accent), #ab6b2a);
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .JHProcess {
+    max-width: 1280px;
+    margin: 0 auto 48px;
+    padding: 0 16px;
+  }
+
+  .JHProcessGrid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .JHProcessStep {
+    background: linear-gradient(160deg, #fff, #f8f4ec);
+    border: 1px solid var(--jh-line);
+    border-radius: var(--jh-radius);
+    padding: 14px;
+    min-height: 155px;
+  }
+
+  .JHProcessStep .nr {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--jh-brand-dark);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .JHProcessStep h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    color: var(--jh-text);
+  }
+
+  .JHProcessStep p {
+    margin: 0;
+    color: var(--jh-muted);
+    font-size: 0.93rem;
+  }
+
+  .SmartFaqs h3 {
+    font-size: 1.04rem;
+  }
+
+  .JHBottomCTA {
+    max-width: 1280px;
+    margin: 0 auto 30px;
+    padding: 0 16px;
+  }
+
+  .JHBottomCTAInner {
+    border-radius: 16px;
+    background: linear-gradient(120deg, rgba(22, 49, 61, 0.95), rgba(30, 87, 106, 0.92));
+    color: #fff;
+    padding: 28px;
+  }
+
+  .JHBottomCTAInner p { color: #dce7ec; }
+
+  .JHBottomCTABtns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .JHBottomCTABtns a {
+    min-height: 44px;
+    border-radius: 999px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .JHBottomCTABtns .primary {
+    background: linear-gradient(135deg, var(--jh-accent), #ab6b2a);
+    color: #fff;
+  }
+
+  .JHBottomCTABtns .secondary {
+    border: 1px solid rgba(255,255,255,0.38);
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .JHMobileStickyCTA {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 70;
+    display: none;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #d8d0c3;
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 12px 28px rgba(16, 26, 32, 0.18);
+  }
+
+  .JHMobileStickyCTA a {
+    flex: 1;
+    min-height: 42px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+
+  .JHMobileStickyCTA .a { border: 1px solid #b8c7cf; color: #173f4f; }
+  .JHMobileStickyCTA .b { background: linear-gradient(135deg, var(--jh-accent), #ab6b2a); color: #fff; }
+
+  @media (max-width: 1080px) {
+    .JHCredBandInner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .JHCredItem:nth-child(2n) { border-right: 0; }
+    .JHWhyUsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .JHProcessGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .JHTrustQuick { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 700px) {
+    .JHWhyUsGrid,
+    .JHProcessGrid,
+    .JHCredBandInner { grid-template-columns: 1fr; }
+    .JHCredItem { border-right: 0; border-bottom: 1px solid var(--jh-line); }
+    .JHCredItem:last-child { border-bottom: 0; }
+    .JHMobileStickyCTA { display: flex; }
+  }
+</style>
+
+<script>
+(function () {
+  function q(sel, root) { return (root || document).querySelector(sel); }
+  function qa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+
+  function safeSetText(sel, text) {
+    var el = q(sel);
+    if (el) el.textContent = text;
+  }
+
+  function ensureHeroUpdate() {
+    safeSetText(
+      ".VideoHeader-video_header_8894 .header-custom-html-content h1",
+      "Nyckelfardiga Attefallshus med fast pris och trygg process"
+    );
+
+    safeSetText(
+      ".VideoHeader-video_header_8894 .header-custom-html-content p.text-color-white",
+      "Vi hjalper dig fran ide till fardigt hus med tydlig projektledning, genomtankt design och professionellt genomforande."
+    );
+
+    var heroBtnText = q(".VideoHeader-video_header_8894 .SmartButtonText");
+    if (heroBtnText) heroBtnText.textContent = "Fa kostnadsfri offert";
+
+    var heroBtn = q(".VideoHeader-video_header_8894 .SmartButton");
+    if (heroBtn) heroBtn.setAttribute("data-href", "/offertforfragan");
+
+    var btnContainer = q(".VideoHeader-video_header_8894 .HeaderEntrance .mt-3");
+    if (btnContainer && !q(".JHSecondaryHeroBtn", btnContainer.parentNode)) {
+      var sec = document.createElement("a");
+      sec.className = "JHSecondaryHeroBtn btn btn-regular btn-medium";
+      sec.href = "/vara-tjanster/attefallshus";
+      sec.style.marginLeft = "10px";
+      sec.textContent = "Se vara husmodeller";
+      btnContainer.appendChild(sec);
+    }
+
+    var trustSlot = q(".VideoHeader-video_header_8894 .header-custom-html-content");
+    if (trustSlot && !q(".JHTrustQuick", trustSlot)) {
+      var wrap = document.createElement("div");
+      wrap.className = "JHTrustQuick";
+      wrap.innerHTML = ""
+        + "<div class='JHTrustQuickItem'>Fast pris</div>"
+        + "<div class='JHTrustQuickItem'>Tydlig process</div>"
+        + "<div class='JHTrustQuickItem'>Erfaren byggpartner</div>";
+      trustSlot.appendChild(wrap);
+    }
+  }
+
+  function ensureNavCta() {
+    qa("a[href='/offertforfragan'], a[href='/offertf%C3%B6rfr%C3%A5gan']").forEach(function (a) {
+      if (a.textContent.trim().toLowerCase().indexOf("offert") === -1) {
+        a.textContent = "Fa offert";
+      }
+    });
+  }
+
+  function insertCredBand() {
+    var header = q(".VideoHeader-video_header_8894");
+    if (!header || q(".JHCredBand")) return;
+
+    var band = document.createElement("section");
+    band.className = "JHCredBand";
+    band.innerHTML = ""
+      + "<div class='JHCredBandInner'>"
+      + "<div class='JHCredItem'><strong>20+ ars erfarenhet</strong><span>Gedigen byggteknisk kompetens.</span></div>"
+      + "<div class='JHCredItem'><strong>Fast pris</strong><span>Tydlig offert med klara ramar.</span></div>"
+      + "<div class='JHCredItem'><strong>Nyckelfardiga losningar</strong><span>Helhetsansvar genom hela projektet.</span></div>"
+      + "<div class='JHCredItem'><strong>Stockholm till Halmstad</strong><span>Leverans i ett brett geografiskt omrade.</span></div>"
+      + "<div class='JHCredItem'><strong>Personlig kontakt</strong><span>Samma kontakt fran start till mal.</span></div>"
+      + "</div>";
+
+    header.insertAdjacentElement("afterend", band);
+  }
+
+  function insertWhyUs() {
+    if (q(".JHWhyUs")) return;
+    var target = q(".OurServices");
+    if (!target) return;
+
+    var section = document.createElement("section");
+    section.className = "JHWhyUs";
+    section.innerHTML = ""
+      + "<h2>Darfor valjer kunder JH Attefallshus</h2>"
+      + "<div class='JHWhyUsGrid'>"
+      + "<article class='JHWhyCard'><h3>Tydlig projektledning</h3><p>Du vet alltid nasta steg, tidplan och ansvar.</p></article>"
+      + "<article class='JHWhyCard'><h3>Professionell kommunikation</h3><p>Snabba svar och raka besked under hela resan.</p></article>"
+      + "<article class='JHWhyCard'><h3>Byggteknisk kompetens</h3><p>Erfarenhet som skapar trygghet i beslut och genomforande.</p></article>"
+      + "<article class='JHWhyCard'><h3>Flexibla losningar</h3><p>Anpassningar utifran tomt, behov och budget.</p></article>"
+      + "<article class='JHWhyCard'><h3>Kvalitet over tid</h3><p>Genomtankta materialval och robust byggnation.</p></article>"
+      + "<article class='JHWhyCard'><h3>Trygg process</h3><p>Fran forsta kontakt till fardigt resultat utan krangel.</p></article>"
+      + "</div>";
+
+    target.insertAdjacentElement("beforebegin", section);
+  }
+
+  function enhanceModelCards() {
+    var modelMap = {
+      "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris fran 995 000 kr" },
+      "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris fran 1 195 000 kr" },
+      "Vindhagen 50": { size: "50 m2", use: "Familj/Kontor", price: "Pris fran 1 395 000 kr" },
+      "Stjarnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris fran 1 425 000 kr" },
+      "Fjordhem 76": { size: "76 m2", use: "Familjeboende", price: "Pris fran 1 995 000 kr" },
+      "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris fran 2 495 000 kr" }
+    };
+
+    qa(".ServicesInline-services_inline_5282 article").forEach(function (card) {
+      if (q(".JHModelMeta", card)) return;
+
+      var titleEl = q("h3", card);
+      if (!titleEl) return;
+      var title = (titleEl.textContent || "").trim();
+      var meta = modelMap[title];
+      if (!meta) return;
+
+      var wrap = q(".article-content-wrapper", card);
+      if (!wrap) return;
+
+      var metaEl = document.createElement("div");
+      metaEl.className = "JHModelMeta";
+      metaEl.innerHTML = "<span class='JHBadge'>" + meta.size + "</span><span class='JHBadge'>" + meta.use + "</span>";
+
+      var priceEl = document.createElement("div");
+      priceEl.className = "JHPriceFrom";
+      priceEl.textContent = meta.price;
+
+      var p = q("p", wrap);
+      if (p) p.insertAdjacentElement("afterend", metaEl);
+      metaEl.insertAdjacentElement("afterend", priceEl);
+    });
+
+    var servicesSection = q(".ServicesInline-services_inline_5282");
+    if (servicesSection && !q(".JHSectionCTA")) {
+      var cta = document.createElement("div");
+      cta.className = "JHSectionCTA";
+      cta.innerHTML = "<a href='/offertforfragan'>Fa offert pa ratt modell</a>";
+      servicesSection.insertAdjacentElement("afterend", cta);
+    }
+  }
+
+  function insertProcessBeforeReviews() {
+    if (q(".JHProcess")) return;
+    var reviews = q(".SmartReviews-reviews_8874");
+    if (!reviews) return;
+
+    var section = document.createElement("section");
+    section.className = "JHProcess";
+    section.innerHTML = ""
+      + "<h2>En tydlig process i fem steg</h2>"
+      + "<div class='JHProcessGrid'>"
+      + "<article class='JHProcessStep'><div class='nr'>1</div><h3>Forfragan</h3><p>Du beskriver behov, tomt och malbild.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>2</div><h3>Radgivning och offert</h3><p>Du far tydlig rekommendation och prisram.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>3</div><h3>Val av modell</h3><p>Vi planerar losning utifran dina forutsattningar.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>4</div><h3>Produktion och leverans</h3><p>Bygget drivs strukturerat med lopande dialog.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>5</div><h3>Fardigt hus</h3><p>Overlamning av ett hus redo att anvandas.</p></article>"
+      + "</div>";
+
+    reviews.insertAdjacentElement("beforebegin", section);
+  }
+
+  function tuneFaqCopy() {
+    var map = {
+      "Vad kostar det att bygga ett Attefallshus med er?": "Vad kostar ett attefallshus?",
+      "Hur lang tid tar det att bygga mitt nya Attefallshus?": "Hur lang ar leveranstiden?",
+      "Var kan man anlita er for era tjanster?": "Levererar ni i hela Sverige?"
+    };
+
+    qa(".SmartFaqs h3").forEach(function (h) {
+      var t = (h.textContent || "").trim();
+      if (map[t]) h.textContent = map[t];
+    });
+  }
+
+  function insertBottomCtaBeforeFooter() {
+    if (q(".JHBottomCTA")) return;
+    var footer = q(".footer");
+    if (!footer) return;
+
+    var cta = document.createElement("section");
+    cta.className = "JHBottomCTA";
+    cta.innerHTML = ""
+      + "<div class='JHBottomCTAInner'>"
+      + "<h2>Beratta vad du vill bygga sa aterkommer vi snabbt med offert</h2>"
+      + "<p>Fa tydlig prisbild, passande modellforslag och nasta steg utan bindning.</p>"
+      + "<div class='JHBottomCTABtns'>"
+      + "<a class='primary' href='/offertforfragan'>Fa offert</a>"
+      + "<a class='secondary' href='/sida/kontakta-oss'>Kontakta oss</a>"
+      + "</div>"
+      + "</div>";
+
+    footer.insertAdjacentElement("beforebegin", cta);
+  }
+
+  function ensureMobileStickyCta() {
+    if (q(".JHMobileStickyCTA")) return;
+    var bar = document.createElement("div");
+    bar.className = "JHMobileStickyCTA";
+    bar.innerHTML = ""
+      + "<a class='a' href='tel:0702754702'>Ring</a>"
+      + "<a class='b' href='/offertforfragan'>Fa offert</a>";
+    document.body.appendChild(bar);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    ensureHeroUpdate();
+    ensureNavCta();
+    insertCredBand();
+    insertWhyUs();
+    enhanceModelCards();
+    insertProcessBeforeReviews();
+    tuneFaqCopy();
+    insertBottomCtaBeforeFooter();
+    ensureMobileStickyCta();
+  });
+})();
+</script>

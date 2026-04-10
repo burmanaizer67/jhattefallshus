@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nyckelfardiga Attefallshus med fast pris | JH Attefallshus</title>
+  <meta name="description" content="Nyckelfardiga Attefallshus med fast pris, tydlig process och personlig projektledning. Bygg tryggt med JH Attefallshus fran Stockholm till Halmstad.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.jhattefallshus.se/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="Nyckelfardiga Attefallshus med fast pris | JH Attefallshus">
+  <meta property="og:description" content="Vi hjalper dig fran ide till fardigt hus med tydlig projektledning, genomtankt design och professionellt genomforande.">
+  <meta property="og:url" content="https://www.jhattefallshus.se/">
+  <meta property="og:image" content="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/564/large/jh-byggmastare-ab-bild-2026.jpg">
+
+  <meta name="theme-color" content="#16313d">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --surface-soft: #f0ebe3;
+      --text: #1f2a2e;
+      --text-muted: #4f5b60;
+      --brand: #1f5a70;
+      --brand-dark: #173f4f;
+      --accent: #bf7a33;
+      --line: #ddd5c8;
+      --ok: #2f6d4f;
+      --radius: 14px;
+      --radius-lg: 20px;
+      --shadow: 0 10px 30px rgba(24, 32, 36, 0.08);
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      line-height: 1.55;
+      background:
+        radial-gradient(1000px 400px at 10% -20%, #efe7db 0%, transparent 60%),
+        radial-gradient(700px 300px at 85% -10%, #e5eef2 0%, transparent 70%),
+        var(--bg);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 12px;
+      top: 12px;
+      width: auto;
+      height: auto;
+      background: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      z-index: 1000;
+      border: 2px solid var(--brand);
+    }
+
+    .wrap { width: min(var(--max), 92vw); margin-inline: auto; }
+    .section { padding: 72px 0; }
+    .eyebrow {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin: 0 0 10px;
+    }
+    h1, h2, h3 {
+      font-family: "Fraunces", "Georgia", serif;
+      line-height: 1.12;
+      letter-spacing: 0.01em;
+      margin: 0 0 14px;
+    }
+    h1 { font-size: clamp(2rem, 4.2vw, 3.6rem); }
+    h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); }
+    h3 { font-size: clamp(1.15rem, 2vw, 1.45rem); }
+    p { margin: 0 0 14px; color: var(--text-muted); }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      font-weight: 700;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .btn:focus-visible { outline: 3px solid #8ab8ce; outline-offset: 2px; }
+    .btn.primary {
+      color: #fff;
+      background: linear-gradient(130deg, var(--accent), #ab6b2a);
+      box-shadow: 0 8px 22px rgba(191, 122, 51, 0.35);
+    }
+    .btn.primary:hover { transform: translateY(-1px); }
+    .btn.ghost {
+      color: var(--brand-dark);
+      border-color: #b9cad1;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(18, 43, 55, 0.86);
+      backdrop-filter: blur(8px);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 14px;
+    }
+    .logo {
+      color: #fff;
+      font-family: "Fraunces", serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: #e7eef1;
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .hero {
+      position: relative;
+      color: #fff;
+      padding: 100px 0 88px;
+      overflow: clip;
+      background:
+        linear-gradient(100deg, rgba(16, 35, 44, 0.9) 0%, rgba(16, 35, 44, 0.64) 60%, rgba(16, 35, 44, 0.35) 100%),
+        url("https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/564/large/jh-byggmastare-ab-bild-2026.jpg") center/cover no-repeat;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: end;
+    }
+    .hero p { color: #dce8ed; max-width: 62ch; }
+
+    .trust-points {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 740px;
+    }
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(6px);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card strong { display: block; font-size: 1.8rem; font-family: "Fraunces", serif; }
+    .hero-card p { margin: 0; color: #e6f0f4; }
+
+    .trust-band {
+      margin-top: -24px;
+      position: relative;
+      z-index: 2;
+    }
+    .trust-grid {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0;
+      box-shadow: var(--shadow);
+    }
+    .trust-item {
+      padding: 18px 16px;
+      border-right: 1px solid var(--line);
+    }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item strong { display: block; font-size: 1.1rem; margin-bottom: 4px; }
+    .trust-item span { color: var(--text-muted); font-size: 0.95rem; }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(20, 28, 34, 0.05);
+    }
+
+    .models {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .model-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 7px 22px rgba(20, 28, 34, 0.06);
+      display: flex;
+      flex-direction: column;
+    }
+    .model-media { aspect-ratio: 4 / 3; object-fit: cover; }
+    .model-body { padding: 16px; display: grid; gap: 10px; }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: #324047;
+      font-weight: 600;
+    }
+    .price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #223137;
+    }
+
+    .lifestyle-grid,
+    .project-grid,
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .lifestyle-item,
+    .project-card,
+    .review {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .lifestyle-item { padding: 18px; }
+    .review { padding: 18px; }
+    .stars { color: #c37c2b; letter-spacing: 0.08em; font-weight: 700; }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .step {
+      background: linear-gradient(170deg, #ffffff, #f8f4ec);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      min-height: 165px;
+    }
+    .step .nr {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--brand-dark);
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .faq {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq details:last-child { border-bottom: 0; }
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 700;
+      padding: 16px 18px;
+    }
+    .faq p { padding: 0 18px 16px; margin: 0; }
+
+    .cta-final {
+      background:
+        linear-gradient(120deg, rgba(22, 49, 61, 0.95), rgba(30, 87, 106, 0.92)),
+        url("https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/857/large/jh-attefallshus-bild-2026.jpg") center/cover no-repeat;
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+    .cta-final p { color: #deebf0; }
+
+    .link-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .link-chip {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #143746;
+      background: #e8f0f4;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid #d4e2e8;
+    }
+
+    footer {
+      padding: 36px 0 90px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .mobile-cta {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 60;
+      display: none;
+      gap: 8px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #d9d1c5;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(16, 26, 32, 0.18);
+      backdrop-filter: blur(6px);
+    }
+    .mobile-cta .btn { flex: 1; min-height: 44px; font-size: 0.95rem; }
+
+    @media (max-width: 1080px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .trust-item:nth-child(2n) { border-right: 0; }
+      .cards-3,
+      .models,
+      .lifestyle-grid,
+      .reviews-grid,
+      .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .process { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 740px) {
+      .section { padding: 58px 0; }
+      .nav-links { display: none; }
+      .hero { padding-top: 86px; }
+      .trust-points { grid-template-columns: 1fr; }
+      .trust-grid,
+      .cards-3,
+      .models,
+      .lifestyle-grid,
+      .reviews-grid,
+      .project-grid,
+      .process { grid-template-columns: 1fr; }
+      .trust-item { border-right: 0; border-bottom: 1px solid var(--line); }
+      .trust-item:last-child { border-bottom: 0; }
+      .mobile-cta { display: flex; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JH Attefallshus",
+    "url": "https://www.jhattefallshus.se/",
+    "telephone": "+46702754702",
+    "email": "info@jhattefallshus.se",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Attehagsvagen 50",
+      "postalCode": "18762",
+      "addressLocality": "Taby",
+      "addressCountry": "SE"
+    },
+    "areaServed": "Stockholm till Halmstad",
+    "description": "Nyckelfardiga Attefallshus med fast pris, tydlig process och personlig projektledning."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Behover man bygglov for att bygga ett Attefallshus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I manga fall racker en anmalan och startbesked. Vi hjalper dig med underlag och process mot kommunen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad kostar ett Attefallshus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pris beror pa modell, standard och markforutsattningar. Du far en tydlig offert med fasta ramar och vad som ingar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur lang ar leveranstiden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vanlig tid fran planering till leverans ar ofta 8 till 16 veckor beroende pa modell och projektscope."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till huvudinnehall</a>
+
+  <header class="site-header" aria-label="Huvudnavigation">
+    <div class="wrap nav">
+      <a class="logo" href="/">JH Attefallshus</a>
+      <nav class="nav-links" aria-label="Primar">
+        <a href="/sida/om-oss">Om oss</a>
+        <a href="/sida/inspiration">Inspiration</a>
+        <a href="/sida/recensioner">Recensioner</a>
+        <a href="/vara-tjanster/attefallshus">Husmodeller</a>
+        <a href="/sida/vad-kostar-ett-attefallshus-i-stockholm-komplett-prisguide">Prislista</a>
+        <a href="/sida/faq">FAQ</a>
+        <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Fa kostnadsfri offert</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Attefallshus fran Stockholm till Halmstad</p>
+          <h1>Nyckelfardiga Attefallshus med fast pris och trygg process</h1>
+          <p>Vi hjalper dig fran ide till fardigt hus med tydlig projektledning, genomtankt design och professionellt genomforande. Du far en smidig resa, en plan du forstar och ett resultat som fungerar i vardagen.</p>
+
+          <div class="btn-row">
+            <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Fa kostnadsfri offert</a>
+            <a class="btn ghost" href="#modeller">Se vara husmodeller</a>
+          </div>
+
+          <div class="trust-points" aria-label="Trygghetspunkter">
+            <div class="trust-pill"><span aria-hidden="true">&#10003;</span> Fast pris</div>
+            <div class="trust-pill"><span aria-hidden="true">&#10003;</span> Tydlig process</div>
+            <div class="trust-pill"><span aria-hidden="true">&#10003;</span> Erfaren byggpartner</div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Snabbfakta">
+          <strong>20+ ar</strong>
+          <p>Erfarenhet inom bygg, ombyggnad och nyproduktion.</p>
+          <br>
+          <strong>4.9/5</strong>
+          <p>Kundomdomen med fokus pa kommunikation, kvalitet och trygghet.</p>
+          <br>
+          <a class="btn ghost" href="/sida/recensioner">Las recensioner</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-band" aria-label="Fortroende">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><strong>20+ ars erfarenhet</strong><span>Gedigen byggteknisk kompetens.</span></div>
+        <div class="trust-item"><strong>Fast pris</strong><span>Tydlig offert utan overaskningar.</span></div>
+        <div class="trust-item"><strong>Nyckelfardigt</strong><span>Vi tar helhetsansvar i projektet.</span></div>
+        <div class="trust-item"><strong>Stockholm-Halmstad</strong><span>Leverans i ett stort geografiskt omrade.</span></div>
+        <div class="trust-item"><strong>Personlig kontakt</strong><span>Samma kontakt genom hela processen.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="varfor">
+      <div class="wrap">
+        <p class="eyebrow">Darfor valjer kunder oss</p>
+        <h2>Tryggt, tydligt och genomarbetat fran start till fardigt resultat</h2>
+        <div class="cards-3" role="list" aria-label="Argument">
+          <article class="card" role="listitem"><h3>Tydlig projektledning</h3><p>Du vet alltid nasta steg, tidplan och ansvar. Inget gissande.</p></article>
+          <article class="card" role="listitem"><h3>Professionell kommunikation</h3><p>Snabba svar, raka besked och en kontakt som foljer dig hela vagen.</p></article>
+          <article class="card" role="listitem"><h3>Kvalitet som haller</h3><p>Vi bygger for langsiktighet med robusta losningar och god finish.</p></article>
+          <article class="card" role="listitem"><h3>Flexibla upplagg</h3><p>Valj modell som den ar eller anpassa planlosning efter dina mal.</p></article>
+          <article class="card" role="listitem"><h3>Teknisk trygghet</h3><p>Vi guidar i regler, underlag och praktiska beslut tidigt i processen.</p></article>
+          <article class="card" role="listitem"><h3>Resultatfokus</h3><p>Malet ar ett hus som fungerar i vardagen och skapar verkligt varde.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="modeller">
+      <div class="wrap">
+        <p class="eyebrow">Popul&auml;ra modeller</p>
+        <h2>Husmodeller som ar enkla att jamfora och valja mellan</h2>
+        <p>Varje modell visar storlek, prisniva, anvandningsomrade och nasta steg for offert.</p>
+
+        <div class="models" role="list" aria-label="Husmodeller">
+          <article class="model-card" role="listitem">
+            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/465/large/jh-byggmastare-ab-bild.jpg" alt="Solglanta 30 exterior">
+            <div class="model-body">
+              <h3>Solglanta 30</h3>
+              <div class="meta"><span class="badge">30 m2</span><span class="badge">Loft</span><span class="badge">Permanent/Gasthus</span></div>
+              <p>Effektiv plan med varm premiumkansla for mindre tomter.</p>
+              <div class="price">Pris fran 995 000 kr</div>
+              <a class="btn ghost" href="/attefallshus/solglanta-30">Se modell</a>
+            </div>
+          </article>
+
+          <article class="model-card" role="listitem">
+            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/476/large/foretagsbild-fran-jh-byggmastare-ab.jpg" alt="Manviken 40 exterior">
+            <div class="model-body">
+              <h3>Manviken 40</h3>
+              <div class="meta"><span class="badge">40 m2</span><span class="badge">Fritid/Uthyrning</span><span class="badge">Ljus planlosning</span></div>
+              <p>Stilren modell for dig som vill ha flexibel anvandning over tid.</p>
+              <div class="price">Pris fran 1 195 000 kr</div>
+              <a class="btn ghost" href="/attefallshus/manviken-40">Se modell</a>
+            </div>
+          </article>
+
+          <article class="model-card" role="listitem">
+            <img class="model-media" loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/486/large/foretagsbild-fran-jh-byggmastare-ab.jpg" alt="Vindhagen 50 exterior">
+            <div class="model-body">
+              <h3>Vindhagen 50</h3>
+              <div class="meta"><span class="badge">50 m2</span><span class="badge">Familj/Kontor</span><span class="badge">Hog takhojd</span></div>
+              <p>Rymligt attefallshus med tydlig zonindelning och generost ljusinslapp.</p>
+              <div class="price">Pris fran 1 395 000 kr</div>
+              <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Be om offert</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="btn-row" style="margin-top:24px;">
+          <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Fa offert pa ratt modell</a>
+          <a class="btn ghost" href="/vara-tjanster/attefallshus">Se alla husmodeller</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Inspiration och livsstil</p>
+        <h2>Se hur huset kan skapa nya mojligheter i vardagen</h2>
+        <div class="lifestyle-grid">
+          <article class="lifestyle-item"><h3>Skapa plats for familjen</h3><p>Ge nara och kara ett eget boende med narhet till hemmet.</p></article>
+          <article class="lifestyle-item"><h3>Bygg ett smart hemmakontor</h3><p>Fa arbetsro utan att tumma pa design och bekvamlighet.</p></article>
+          <article class="lifestyle-item"><h3>Utoka med uthyrningsdel</h3><p>Skapa ett boende som kan ge extra intakter over tid.</p></article>
+          <article class="lifestyle-item"><h3>Tryggt generationsboende</h3><p>Planera for framtiden med ett praktiskt och vackert komplementhus.</p></article>
+          <article class="lifestyle-item"><h3>Fritidshus pa liten yta</h3><p>Hog funktion, lag komplexitet och genomtankt planlosning.</p></article>
+          <article class="lifestyle-item"><h3>Gastupplevelse med premiumkansla</h3><p>Skapa ett valkomnande boende med hotellkansla i tradgarden.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <p class="eyebrow">Process i 5 steg</p>
+        <h2>En enkel och trygg vag till ditt nya Attefallshus</h2>
+        <div class="process" role="list" aria-label="Byggprocess">
+          <article class="step" role="listitem"><span class="nr">1</span><h3>Forfragan</h3><p>Du beskriver behov, tomt och malbild. Vi lyssnar in och prioriterar ratt.</p></article>
+          <article class="step" role="listitem"><span class="nr">2</span><h3>Radgivning och offert</h3><p>Du far tydlig rekommendation, fast prisbild och nasta steg.</p></article>
+          <article class="step" role="listitem"><span class="nr">3</span><h3>Modellval och planering</h3><p>Vi valjer modell, justeringar och tar fram genomforandeplan.</p></article>
+          <article class="step" role="listitem"><span class="nr">4</span><h3>Produktion och leverans</h3><p>Bygget drivs strukturerat med lopande uppfoljning och kommunikation.</p></article>
+          <article class="step" role="listitem"><span class="nr">5</span><h3>Fardigt hus</h3><p>Slutgenomgang och overlamning av ett hus redo att anvandas direkt.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recensioner">
+      <div class="wrap">
+        <p class="eyebrow">Social proof</p>
+        <h2>Vad kunderna sager efter leverans</h2>
+        <div class="reviews-grid">
+          <article class="review"><div class="stars" aria-label="5 av 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Tydlig kommunikation hela vagen och ett resultat som overtraffade forvantningarna."</p><strong>Micke H, Stockholm</strong></article>
+          <article class="review"><div class="stars" aria-label="5 av 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Professionellt team, bra planering och tryggt genomforande fran start till slut."</p><strong>Asa L, Taby</strong></article>
+          <article class="review"><div class="stars" aria-label="5 av 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Vi uppskattade fast pris, tydliga delmal och att allt kandes valorganiserat."</p><strong>Tobias M, Halmstad</strong></article>
+        </div>
+        <div class="btn-row"><a class="btn ghost" href="/sida/recensioner">Las fler recensioner</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="projekt">
+      <div class="wrap">
+        <p class="eyebrow">Tidigare projekt</p>
+        <h2>Exklusiv projektvy med storre bilder och tydlig kontext</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <img loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/488/large/jh-byggmastare-ab-bild-2026.jpg" alt="Projekt Vindhagen 50 i skogsmiljo">
+            <div style="padding:14px;"><h3>Vindhagen 50</h3><p>Ljust familjeboende med loft och tydlig zonering.</p><a class="link-chip" href="/sida/inspiration">Se projekt</a></div>
+          </article>
+          <article class="project-card">
+            <img loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/518/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Stjarnvik 50 med tra fasad">
+            <div style="padding:14px;"><h3>Stjarnvik 50</h3><p>Modern premiumkansla med naturmaterial och funktion.</p><a class="link-chip" href="/sida/inspiration">Se projekt</a></div>
+          </article>
+          <article class="project-card">
+            <img loading="lazy" width="1200" height="900" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/551/large/jh-byggmastare-ab-bild.jpg" alt="Projekt Solmark 120 med stor uteplats">
+            <div style="padding:14px;"><h3>Solmark 120</h3><p>Rymlig modell med fokus pa permanentboende och ljus.</p><a class="link-chip" href="/sida/inspiration">Se projekt</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <p class="eyebrow">Vanliga fragor</p>
+        <h2>Svar pa de viktigaste kopfragorna</h2>
+        <div class="faq">
+          <details>
+            <summary>Behovs bygglov for attefallshus?</summary>
+            <p>Regler beror pa storlek, placering och kommun. Vi hjalper dig med anmalan, underlag och startbesked sa processen blir korrekt fran borjan.</p>
+          </details>
+          <details>
+            <summary>Vad kostar ett attefallshus?</summary>
+            <p>Pris paverkas av modell, standard och markforutsattningar. Du far en tydlig offert med pris fran och vad som ingar innan du bestammer dig.</p>
+          </details>
+          <details>
+            <summary>Hur lang ar leveranstiden?</summary>
+            <p>Vanligtvis 8 till 16 veckor beroende pa vald modell och planeringslage. Du far en realistisk tidplan innan byggstart.</p>
+          </details>
+          <details>
+            <summary>Vad ingar i priset?</summary>
+            <p>Vi specificerar vad som ingar i leverans, montage och tillval. Malet ar total transparens, inte otydliga poster.</p>
+          </details>
+          <details>
+            <summary>Kan planlosningen anpassas?</summary>
+            <p>Ja, flera modeller kan anpassas efter behov och tomtens forutsattningar.</p>
+          </details>
+          <details>
+            <summary>Levererar ni i hela Sverige?</summary>
+            <p>Vi arbetar framfor allt fran Stockholm till Halmstad. Kontakta oss om ditt projekt sa ger vi snabbt besked.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Avslutande CTA">
+      <div class="wrap cta-final">
+        <p class="eyebrow" style="color:#d3e8ef;">Nasta steg</p>
+        <h2>Beratta vad du vill bygga sa aterkommer vi snabbt med offert</h2>
+        <p>Kort forfragan racker for att komma igang. Du far tydlig aterkoppling, forslag pa passande modell och nasta steg utan krangel.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Fa offert</a>
+          <a class="btn ghost" href="/sida/kontakta-oss">Kontakta oss</a>
+        </div>
+
+        <div class="link-grid" aria-label="Internlankar">
+          <a class="link-chip" href="/vara-tjanster/attefallshus">Husmodeller</a>
+          <a class="link-chip" href="/sida/recensioner">Recensioner</a>
+          <a class="link-chip" href="/sida/faq">FAQ</a>
+          <a class="link-chip" href="/sida/vad-kostar-ett-attefallshus-i-stockholm-komplett-prisguide">Prisguide</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>JH Attefallshus</strong><br>
+      Telefon: <a href="tel:+46702754702">070-275 47 02</a> | E-post: <a href="mailto:info@jhattefallshus.se">info@jhattefallshus.se</a>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" aria-label="Mobil offert CTA">
+    <a class="btn ghost" href="tel:+46702754702">Ring</a>
+    <a class="btn primary" href="/offertf%C3%B6rfr%C3%A5gan">Fa offert</a>
+  </div>
+</body>
+</html>
