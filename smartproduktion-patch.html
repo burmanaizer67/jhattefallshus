@@ -820,13 +820,14 @@
     var fjordhemImageSrc = "https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/544/large/bild-fran-jh-byggmastare-ab.jpg?1773065840";
 
     var modelMap = {
-      "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr", slug: "solglanta-30" },
-      "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr", slug: "manviken-40" },
-      "Vindhagen 50": { size: "50 m2", use: "Familj/Kontor", price: "Pris från 1 395 000 kr", slug: "vindhagen-50" },
-      "Stjarnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", slug: "stjarnvik-50" },
-      "Stjärnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", slug: "stjarnvik-50" },
-      "Fjordhem 76": { size: "76 m2", use: "Familjeboende", price: "Pris från 1 995 000 kr", slug: "fjordhem-76" },
-      "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris från 2 495 000 kr", slug: "solmark-120" }
+      "Solglanta 30": { name: "Solglänta 30", size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr", slug: "solglanta-30" },
+      "Solglänta 30": { name: "Solglänta 30", size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr", slug: "solglanta-30" },
+      "Manviken 40": { name: "Manviken 40", size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr", slug: "manviken-40" },
+      "Vindhagen 50": { name: "Vindhagen 50", size: "50 m2", use: "Familj/Kontor", price: "Pris från 1 395 000 kr", slug: "vindhagen-50" },
+      "Stjarnvik 50": { name: "Stjärnvik 50", size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", slug: "stjarnvik-50" },
+      "Stjärnvik 50": { name: "Stjärnvik 50", size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr", slug: "stjarnvik-50" },
+      "Fjordhem 76": { name: "Fjordhem 76", size: "76 m2", use: "Familjeboende", price: "Pris från 1 995 000 kr", slug: "fjordhem-76" },
+      "Solmark 120": { name: "Solmark 120", size: "120 m2", use: "Permanentboende", price: "Pris från 2 495 000 kr", slug: "solmark-120" }
     };
 
     function normalizeModelTitle(title) {
@@ -847,9 +848,10 @@
       var meta = modelMap[title] || modelMap[normalizeModelTitle(title)];
       if (meta && usedSlugs[meta.slug] && !usedSlugs["fjordhem-76"]) {
         meta = modelMap["Fjordhem 76"];
-        if (titleEl) titleEl.textContent = "Fjordhem 76";
       }
       if (!meta) return;
+      var displayName = meta.name || title;
+      if (titleEl) titleEl.textContent = displayName;
       usedSlugs[meta.slug] = true;
 
       var wrap = q(".article-content-wrapper", card);
@@ -881,12 +883,12 @@
       if (imgAnchor) {
         imgAnchor.href = modelHref;
         imgAnchor.classList.add("JHModelImageLink");
-        imgAnchor.setAttribute("aria-label", title + " - läs mer");
+        imgAnchor.setAttribute("aria-label", displayName + " - läs mer");
       } else {
         var link = document.createElement("a");
         link.className = "JHModelImageLink";
         link.href = modelHref;
-        link.setAttribute("aria-label", title + " - läs mer");
+        link.setAttribute("aria-label", displayName + " - läs mer");
         img.parentNode.insertBefore(link, img);
         link.appendChild(img);
       }
