@@ -823,22 +823,26 @@
         window.dataLayer.push({ event: "jh_hero_variant", variant: variant });
       }
 
-      function normalizeOfferLinksForGithubPages() {
-        var isGithubPages = /github\.io$/i.test(window.location.hostname);
-        if (!isGithubPages) return;
+      function normalizeOfferLinksForPreview() {
+        var isGithubPages = /github\.io$/i.test(window.location.hostname || "");
+        var isFilePreview = (window.location.protocol || "") === "file:";
+        if (!isGithubPages && !isFilePreview) return;
 
-        var repoBase = "";
-        var segments = (window.location.pathname || "/").split("/").filter(Boolean);
-        if (segments.length > 0) repoBase = "/" + segments[0];
-        var fallbackHref = repoBase + "/#kontakt";
+        var fallbackHref = "#kontakt";
+        if (isGithubPages) {
+          var repoBase = "";
+          var segments = (window.location.pathname || "/").split("/").filter(Boolean);
+          if (segments.length > 0) repoBase = "/" + segments[0];
+          fallbackHref = repoBase + "/#kontakt";
+        }
 
-        Array.prototype.slice.call(document.querySelectorAll("a[href^='/offertf']")).forEach(function (a) {
+        Array.prototype.slice.call(document.querySelectorAll("a[href^='/offert']")).forEach(function (a) {
           a.setAttribute("href", fallbackHref);
         });
       }
 
       applyHeroVariant(resolveVariant());
-      normalizeOfferLinksForGithubPages();
+      normalizeOfferLinksForPreview();
     })();
   </script>
 </body>

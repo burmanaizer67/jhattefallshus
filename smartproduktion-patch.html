@@ -514,11 +514,27 @@
   function getOfferHref() {
     var defaultHref = "/offertf%C3%B6rfr%C3%A5gan";
     var isGithubPages = /github\.io$/i.test(window.location.hostname || "");
-    if (!isGithubPages) return defaultHref;
+    var isFilePreview = (window.location.protocol || "") === "file:";
+    if (!isGithubPages && !isFilePreview) return defaultHref;
+
+    if (isFilePreview) return "#kontakt";
 
     var segments = (window.location.pathname || "/").split("/").filter(Boolean);
     var repoBase = segments.length > 0 ? "/" + segments[0] : "";
     return repoBase + "/#kontakt";
+  }
+
+  function normalizeOfferLinksForPreview() {
+    var offerHref = getOfferHref();
+    if (offerHref === "/offertf%C3%B6rfr%C3%A5gan") return;
+
+    qa("a[href^='/offert']").forEach(function (a) {
+      a.setAttribute("href", offerHref);
+    });
+
+    qa("[data-href^='/offert']").forEach(function (el) {
+      el.setAttribute("data-href", offerHref);
+    });
   }
 
   function readHeroVariantFromQuery() {
@@ -838,12 +854,17 @@
   }
 
   function insertBottomCtaBeforeFooter() {
-    if (q(".JHBottomCTA")) return;
+    var existing = q(".JHBottomCTA");
+    if (existing) {
+      if (!existing.id) existing.id = "kontakt";
+      return;
+    }
     var footer = q(".footer");
     if (!footer) return;
 
     var cta = document.createElement("section");
     cta.className = "JHBottomCTA";
+    cta.id = "kontakt";
     cta.innerHTML = ""
       + "<div class='JHBottomCTAInner'>"
       + "<h2>Berätta vad du vill bygga så återkommer vi snabbt med offert</h2>"
@@ -899,6 +920,7 @@
     tuneFaqCopy();
     insertBottomCtaBeforeFooter();
     ensureMobileStickyCta();
+    normalizeOfferLinksForPreview();
   });
 })();
 </script>
