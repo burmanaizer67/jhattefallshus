@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Om oss | JH Attefallshus</title>
+  <meta name="description" content="Om JH Attefallshus: vår idé, oberoende arbetssätt och hur vi hjälper dig hitta rätt attefallshus på ett tryggt och genomtänkt sätt.">
+  <link rel="icon" type="image/png" href="./logotyp-jh-attefallshus.png">
+  <meta name="theme-color" content="#16313d">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --line: #ddd5c8;
+      --text: #1f2a2e;
+      --muted: #4f5b60;
+      --brand: #173f4f;
+      --accent: #bf7a33;
+      --radius: 14px;
+      --max: 1000px;
+      --shadow: 0 12px 30px rgba(20, 30, 35, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(900px 360px at 15% -20%, #efe7db 0%, transparent 60%),
+        radial-gradient(700px 300px at 90% -10%, #e5eef2 0%, transparent 70%),
+        var(--bg);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(18, 43, 55, 0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+    }
+
+    .wrap {
+      width: min(var(--max), 92vw);
+      margin: 0 auto;
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-family: "Fraunces", serif;
+      font-size: 1.18rem;
+    }
+
+    .logo img { height: 34px; width: auto; display: block; }
+
+    .nav a {
+      color: #e7eef1;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 78px 0 34px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1f5a70;
+    }
+
+    h1, h2 {
+      margin: 0 0 12px;
+      line-height: 1.14;
+      font-family: "Fraunces", serif;
+    }
+
+    h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
+    h2 { font-size: clamp(1.35rem, 3vw, 2rem); }
+
+    p { margin: 0 0 12px; color: var(--muted); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 14px;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .bullet-list li { margin-bottom: 6px; }
+
+    .cta {
+      margin: 18px 0 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn.primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), #ab6b2a);
+    }
+
+    .btn.ghost {
+      color: #173f4f;
+      border: 1px solid #b9cad1;
+      background: rgba(255,255,255,0.8);
+    }
+
+    footer {
+      padding: 26px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding-top: 58px; }
+      .nav a:not(.logo) { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Huvudnavigation">
+    <div class="wrap nav">
+      <a class="logo" href="./index.html" aria-label="JH Attefallshus - Startsida">
+        <img src="./logotyp-jh-attefallshus.png" alt="JH Attefallshus logotyp" loading="eager" decoding="async">
+        <span>JH Attefallshus</span>
+      </a>
+      <a href="./index.html">Till startsidan</a>
+    </div>
+  </header>
+
+  <main class="wrap hero" id="main">
+    <p class="eyebrow">Om oss</p>
+    <h1>Vi hjälper dig att hitta rätt attefallshus - enkelt, tryggt och genomtänkt.</h1>
+    <p>Vår ambition är att göra det lättare att förstå, jämföra och välja rätt lösning, oavsett om du letar efter ett gästhus, ett generationsboende eller en investering för uthyrning.</p>
+
+    <section class="card" aria-label="Var ide">
+      <h2>Vår idé</h2>
+      <p>Vi har skapat en plattform där du som köpare får en tydlig överblick av marknaden.</p>
+      <p>Istället för att du själv ska leta runt bland olika leverantörer samlar vi information, inspiration och konkreta alternativ på ett och samma ställe.</p>
+      <p><strong>Målet är enkelt:</strong> att hjälpa dig fatta ett tryggt och välgrundat beslut.</p>
+    </section>
+
+    <section class="card" aria-label="Oberoende och transparens">
+      <h2>Oberoende och transparens</h2>
+      <p>Vi är en oberoende aktör och arbetar inte exklusivt med en enskild leverantör.</p>
+      <p>Det innebär att vi kan:</p>
+      <ul class="bullet-list">
+        <li>visa flera alternativ</li>
+        <li>lyfta både fördelar och skillnader</li>
+        <li>hjälpa dig hitta det som passar just din situation</li>
+      </ul>
+      <p>Vårt fokus ligger alltid på din lösning - inte på att sälja ett specifikt hus.</p>
+    </section>
+
+    <section class="card" aria-label="For dig som vill bygga">
+      <h2>För dig som vill bygga</h2>
+      <p>Ett attefallshus är en flexibel lösning som kan användas till mycket:</p>
+      <ul class="bullet-list">
+        <li>Gasthus</li>
+        <li>Uthyrning</li>
+        <li>Hemmakontor</li>
+        <li>Permanent boende</li>
+      </ul>
+      <p>Regelverket gör det möjligt att bygga upp till 30-50 kvm beroende på förutsättningar.</p>
+      <p><strong>Men valet av hus, lösning och leverantör är avgörande - och det är där vi kommer in.</strong></p>
+    </section>
+
+    <section class="card" aria-label="Bakom sidan">
+      <h2>Bakom sidan</h2>
+      <p>Bakom sidan finns ett genuint intresse för smarta boendelösningar och hur man förenklar processen för dig som kund.</p>
+      <p>Vi arbetar löpande med att:</p>
+      <ul class="bullet-list">
+        <li>uppdatera information</li>
+        <li>förbättra innehållet</li>
+        <li>göra det enklare att jämföra alternativ</li>
+      </ul>
+    </section>
+
+    <section class="card" id="kontakt" aria-label="Kontakta oss">
+      <h2>Kontakta oss</h2>
+      <p>Har du frågor, funderingar eller vill ta nästa steg? Hör av dig - vi hjälper dig gärna vidare.</p>
+      <div class="cta">
+        <a class="btn primary" href="./index.html#kontakt">Skicka förfrågan</a>
+        <a class="btn ghost" href="tel:+46702754702">Ring 070-275 47 02</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>JH Attefallshus</strong><br>
+      Telefon: <a href="tel:+46702754702">070-275 47 02</a> | E-post: <a href="mailto:info@jhattefallshus.se">info@jhattefallshus.se</a>
+    </div>
+  </footer>
+</body>
+</html>
