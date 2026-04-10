@@ -241,7 +241,7 @@
     }
 
     #modeller .models {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
     }
 
@@ -250,7 +250,7 @@
     }
 
     #modeller .model-media {
-      aspect-ratio: 16 / 8;
+      aspect-ratio: 4 / 3;
     }
     .models-cta-row {
       margin-top: 18px;
@@ -425,6 +425,7 @@
       .reviews-grid,
       .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .process { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #modeller .models { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 740px) {
@@ -442,6 +443,7 @@
       .trust-item { border-right: 0; border-bottom: 1px solid var(--line); }
       .trust-item:last-child { border-bottom: 0; }
       .mobile-cta { display: flex; }
+      #modeller .models { grid-template-columns: 1fr; }
     }
   </style>
 
