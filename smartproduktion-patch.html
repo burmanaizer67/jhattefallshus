@@ -395,6 +395,58 @@
     background: rgba(255,255,255,0.08);
   }
 
+  .JHInlineContact {
+    max-width: 1280px;
+    margin: 14px auto 34px;
+    padding: 0 16px;
+  }
+
+  .JHInlineContactInner {
+    border: 1px solid var(--jh-line);
+    border-radius: var(--jh-radius);
+    background: #fff;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .JHInlineContactInner p {
+    margin: 0;
+    color: var(--jh-text);
+    font-weight: 600;
+    font-size: 0.96rem;
+  }
+
+  .JHInlineContactBtns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .JHInlineContactBtns a {
+    min-height: 40px;
+    border-radius: 999px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .JHInlineContactBtns .primary {
+    background: linear-gradient(135deg, var(--jh-accent), #ab6b2a);
+    color: #fff;
+  }
+
+  .JHInlineContactBtns .secondary {
+    border: 1px solid #c6d3d9;
+    color: #173f4f;
+    background: #eef3f5;
+  }
+
   .JHMobileStickyCTA {
     position: fixed;
     left: 10px;
@@ -429,6 +481,18 @@
     .JHCredItem:nth-child(2n) { border-right: 0; }
     .JHWhyUsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .JHProcessGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .JHInlineContactInner {
+      align-items: stretch;
+    }
+
+    .JHInlineContactBtns {
+      width: 100%;
+    }
+
+    .JHInlineContactBtns a {
+      flex: 1;
+    }
     .JHTrustQuick { grid-template-columns: 1fr; }
   }
 
@@ -460,11 +524,11 @@
 
     safeSetText(
       ".VideoHeader-video_header_8894 .header-custom-html-content p.text-color-white",
-      "Vi hjälper dig från idé till färdigt hus med tydlig projektledning, genomtänkt design och professionellt genomförande."
+      "Från idé till färdigt hus med fast pris, tydlig plan och snabb återkoppling."
     );
 
     var heroBtnText = q(".VideoHeader-video_header_8894 .SmartButtonText");
-    if (heroBtnText) heroBtnText.textContent = "Få kostnadsfri offert";
+    if (heroBtnText) heroBtnText.textContent = "Få offert nu";
 
     var heroBtn = q(".VideoHeader-video_header_8894 .SmartButton");
     if (heroBtn) heroBtn.setAttribute("data-href", "/offertf%C3%B6rfr%C3%A5gan");
@@ -644,7 +708,7 @@
         + "<span class='JHBadge'>Snabb återkoppling</span>"
         + "<span class='JHBadge'>Personlig rådgivning</span>"
         + "</div>"
-        + "<a class='btn btn-primary btn-medium' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert på din modell</a>"
+        + "<a class='btn btn-primary btn-medium' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>"
         + "</div>";
       models.insertAdjacentElement("afterend", section);
     }
@@ -658,13 +722,20 @@
     var section = document.createElement("section");
     section.className = "JHProcess";
     section.innerHTML = ""
-      + "<h2>En tydlig process i fem steg</h2>"
+      + "<h2>Från första kontakt till färdigt hus</h2>"
       + "<div class='JHProcessGrid'>"
-      + "<article class='JHProcessStep'><div class='nr'>1</div><h3>Förfrågan</h3><p>Du beskriver behov, tomt och målbild.</p></article>"
-      + "<article class='JHProcessStep'><div class='nr'>2</div><h3>Rådgivning och offert</h3><p>Du får tydlig rekommendation och prisram.</p></article>"
-      + "<article class='JHProcessStep'><div class='nr'>3</div><h3>Val av modell</h3><p>Vi planerar lösning utifrån dina förutsättningar.</p></article>"
-      + "<article class='JHProcessStep'><div class='nr'>4</div><h3>Produktion och leverans</h3><p>Bygget drivs strukturerat med löpande dialog.</p></article>"
-      + "<article class='JHProcessStep'><div class='nr'>5</div><h3>Färdigt hus</h3><p>Överlämning av ett hus redo att användas.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>1</div><h3>Förfrågan</h3><p>Du skickar behov och mål.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>2</div><h3>Rådgivning och offert</h3><p>Du får fast pris och tydligt upplägg.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>3</div><h3>Modellval</h3><p>Vi bekräftar modell och detaljer.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>4</div><h3>Produktion</h3><p>Bygget genomförs med löpande status.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>5</div><h3>Färdigt hus</h3><p>Klart för inflyttning eller uthyrning.</p></article>"
+      + "</div>"
+      + "<div class='JHInlineContactInner' style='margin-top:12px;'>"
+      + "<p>Redo att ta nästa steg?</p>"
+      + "<div class='JHInlineContactBtns'>"
+      + "<a class='primary' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>"
+      + "<a class='secondary' href='/sida/kontakta-oss'>Kontakta oss</a>"
+      + "</div>"
       + "</div>";
 
     reviews.insertAdjacentElement("beforebegin", section);
@@ -693,9 +764,9 @@
     cta.innerHTML = ""
       + "<div class='JHBottomCTAInner'>"
       + "<h2>Berätta vad du vill bygga så återkommer vi snabbt med offert</h2>"
-      + "<p>Få tydlig prisbild, passande modellförslag och nästa steg utan bindning.</p>"
+      + "<p>Kort förfrågan räcker. Du får tydligt pris och nästa steg snabbt.</p>"
       + "<div class='JHBottomCTABtns'>"
-      + "<a class='primary' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert</a>"
+      + "<a class='primary' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>"
       + "<a class='secondary' href='/sida/kontakta-oss'>Kontakta oss</a>"
       + "</div>"
       + "</div>";
@@ -709,8 +780,26 @@
     bar.className = "JHMobileStickyCTA";
     bar.innerHTML = ""
       + "<a class='a' href='tel:0702754702'>Ring</a>"
-      + "<a class='b' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert</a>";
+      + "<a class='b' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>";
     document.body.appendChild(bar);
+  }
+
+  function insertContactAfterReviews() {
+    var reviews = q(".SmartReviews-reviews_8874");
+    if (!reviews || q(".JHInlineContact")) return;
+
+    var section = document.createElement("section");
+    section.className = "JHInlineContact";
+    section.innerHTML = ""
+      + "<div class='JHInlineContactInner'>"
+      + "<p>Nöjd med det du ser? Ta nästa steg idag.</p>"
+      + "<div class='JHInlineContactBtns'>"
+      + "<a class='primary' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert nu</a>"
+      + "<a class='secondary' href='/sida/kontakta-oss'>Kontakta oss</a>"
+      + "</div>"
+      + "</div>";
+
+    reviews.insertAdjacentElement("afterend", section);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -722,6 +811,7 @@
     consolidateAllImagesIntoOneSection();
     insertUnifiedAfterCta();
     insertProcessBeforeReviews();
+    insertContactAfterReviews();
     tuneFaqCopy();
     insertBottomCtaBeforeFooter();
     ensureMobileStickyCta();
