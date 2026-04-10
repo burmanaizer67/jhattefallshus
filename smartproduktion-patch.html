@@ -853,19 +853,19 @@
       usedSlugs[meta.slug] = true;
 
       var wrap = q(".article-content-wrapper", card);
-      if (!wrap) return;
+      if (wrap) {
+        var metaEl = document.createElement("div");
+        metaEl.className = "JHModelMeta";
+        metaEl.innerHTML = "<span class='JHBadge'>" + meta.size + "</span><span class='JHBadge'>" + meta.use + "</span>";
 
-      var metaEl = document.createElement("div");
-      metaEl.className = "JHModelMeta";
-      metaEl.innerHTML = "<span class='JHBadge'>" + meta.size + "</span><span class='JHBadge'>" + meta.use + "</span>";
+        var priceEl = document.createElement("div");
+        priceEl.className = "JHPriceFrom";
+        priceEl.textContent = meta.price;
 
-      var priceEl = document.createElement("div");
-      priceEl.className = "JHPriceFrom";
-      priceEl.textContent = meta.price;
-
-      var p = q("p", wrap);
-      if (p) p.insertAdjacentElement("afterend", metaEl);
-      metaEl.insertAdjacentElement("afterend", priceEl);
+        var p = q("p", wrap);
+        if (p) p.insertAdjacentElement("afterend", metaEl);
+        metaEl.insertAdjacentElement("afterend", priceEl);
+      }
 
       var img = q("img", card);
       if (!img) return;
@@ -891,6 +891,29 @@
         link.appendChild(img);
       }
     });
+
+    // Safety net: ensure the fourth card is Fjordhem if the source markup had duplicate model cards.
+    var unifiedGrid = q(".JHUnifiedModels .services-grid");
+    var cards = unifiedGrid ? qa("article", unifiedGrid) : [];
+    if (cards.length >= 4) {
+      var fjCard = cards[3];
+      var fjImg = q("img", fjCard);
+      if (fjImg) {
+        fjImg.src = fjordhemImageSrc;
+        fjImg.alt = "Fjordhem 76";
+      }
+
+      var fjAnchor = fjImg ? fjImg.closest("a") : q("a", fjCard);
+      var fjHref = getModelHref("fjordhem-76");
+      if (fjAnchor) {
+        fjAnchor.href = fjHref;
+        fjAnchor.classList.add("JHModelImageLink");
+        fjAnchor.setAttribute("aria-label", "Fjordhem 76 - läs mer");
+      }
+
+      var fjTitle = q("h3", fjCard);
+      if (fjTitle) fjTitle.textContent = "Fjordhem 76";
+    }
 
     var oldCta = q(".JHSectionCTA");
     if (oldCta) oldCta.remove();
