@@ -4,21 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Månviken 40 | JH Attefallshus</title>
-  <meta name="description" content="Månviken 40 - flexibel attefallsmodell for fritid eller uthyrning med tydlig prisbild.">
+  <meta name="description" content="Månviken 40 - stilrent attefallshus med loft, tydlig leveranstid och materialval som håller över tid.">
   <link rel="icon" type="image/png" href="../../logotyp-jh-attefallshus.png">
   <style>
-    body { margin: 0; font-family: "Source Sans 3", Arial, sans-serif; background: #f7f4ef; color: #1f2a2e; }
-    .wrap { width: min(980px, 92vw); margin: 0 auto; }
-    header { background: #16313d; color: #fff; padding: 14px 0; }
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --line: #ddd5c8;
+      --text: #1f2a2e;
+      --muted: #4f5b60;
+      --brand: #16313d;
+      --accent: #bf7a33;
+      --radius: 14px;
+    }
+    body { margin: 0; font-family: "Source Sans 3", Arial, sans-serif; background: var(--bg); color: var(--text); }
+    .wrap { width: min(1080px, 92vw); margin: 0 auto; }
+    header { background: var(--brand); color: #fff; padding: 14px 0; }
     .logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; }
     .logo img { height: 32px; width: auto; }
     main { padding: 34px 0 56px; }
-    .card { background: #fff; border: 1px solid #ddd5c8; border-radius: 14px; padding: 18px; margin-top: 16px; }
-    .hero-img { width: 100%; border-radius: 14px; border: 1px solid #ddd5c8; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: start; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-top: 16px; }
+    .hero-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.88rem; font-weight: 700; color: #1f5a70; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.14; }
+    h1 { font-family: "Fraunces", serif; font-size: clamp(2rem, 4vw, 3rem); }
+    h2 { font-family: "Fraunces", serif; font-size: clamp(1.35rem, 2.7vw, 2rem); }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .fact { background: #f5f1ea; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+    .fact strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .bullet-list { margin: 0; padding-left: 18px; color: var(--muted); }
+    .bullet-list li { margin-bottom: 6px; }
     .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
     .btn { min-height: 44px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center; text-decoration: none; font-weight: 700; }
-    .primary { background: #bf7a33; color: #fff; }
+    .primary { background: var(--accent); color: #fff; }
     .ghost { background: #eef3f5; color: #173f4f; border: 1px solid #c6d3d9; }
+    .cta-card { background: linear-gradient(120deg, rgba(22, 49, 61, 0.95), rgba(30, 87, 106, 0.92)); color: #fff; }
+    .cta-card p { color: #dce7ec; }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .facts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -31,21 +58,59 @@
     </div>
   </header>
   <main class="wrap">
-    <h1>Månviken 40</h1>
-    <p>En stilren modell med flexibel anvandning for fritid, generationsboende eller uthyrning.</p>
-    <img class="hero-img" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/476/large/foretagsbild-fran-jh-byggmastare-ab.jpg" alt="Månviken 40">
+    <p class="eyebrow">Attefallshus 40 m2</p>
+    <div class="hero-grid">
+      <div>
+        <h1>Månviken 40</h1>
+        <p>Ett stilrent attefallshus med loft för dig som vill ha mer rymd, bättre materialkänsla och en modell som fungerar lika bra som fritidshus, gästhus eller permanent boende.</p>
+        <div class="facts">
+          <div class="fact"><strong>Storlek</strong><span>40 m2 byggyta</span></div>
+          <div class="fact"><strong>Prisnivå</strong><span>Från 1 195 000 kr</span></div>
+          <div class="fact"><strong>Passar för</strong><span>Fritid, gästhus, permanent</span></div>
+        </div>
+        <div class="row">
+          <a class="btn primary" href="../../index.html#kontakt">Få offert på Månviken 40</a>
+          <a class="btn ghost" href="../../index.html">Till startsidan</a>
+        </div>
+      </div>
+      <div>
+        <img class="hero-img" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/477/large/jh-byggmastare-ab-bild.jpg?1773062045" alt="Månviken 40 exteriör">
+      </div>
+    </div>
+
     <section class="card">
-      <h2>Snabbfakta</h2>
-      <p>Storlek: 40 m2</p>
-      <p>Anvandning: Fritid, uthyrning, extra boende</p>
-      <p>Prisniva: fran 1 195 000 kr</p>
+      <h2>Om modellen</h2>
+      <p>Månviken 40 är byggd för dig som vill ha ett mer komplett boende utan att gå upp till en betydligt större husvolym. Loftet ger extra användbar yta och gör att huset känns större än måtten först antyder.</p>
+      <p>Uttrycket är lugnt och tidlöst, med vertikal furpanel, vitmålade träpaneler invändigt och en nivå på kök, badrum och finish som känns mer villa än budgetstuga.</p>
     </section>
+
     <section class="card">
       <h2>Varför välja Månviken 40?</h2>
-      <p>Balans mellan yta och funktion, med ljus planlosning och goda mojligheter till anpassning.</p>
+      <ul class="bullet-list">
+        <li>Loftlösning som skapar mer rymd och bättre funktion.</li>
+        <li>Isolering i väggar, golv och tak för stabilt inomhusklimat året runt.</li>
+        <li>Passar för både privat användning, uthyrning och permanent boende.</li>
+        <li>Levereras med tydlig tidsplan, vanligtvis inom 24 veckor.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Vad ingår i upplevelsen?</h2>
+      <p>Månviken 40 levereras med fullt utrustat kök från Electrolux, helkaklat badrum med golvvärme, teknisk dokumentation samt materialval som är gjorda för att hålla över tid.</p>
+      <ul class="bullet-list">
+        <li>matt vita luckor och svart bänkskiva i kök</li>
+        <li>Grohe-blandare, Ifö Sign och elektrisk golvvärme i badrum</li>
+        <li>Adax Neo Wi-Fi-radiatorer för smidig uppvärmning</li>
+        <li>tydlig offert med genomgång av vad som ingår och vad som tillkommer</li>
+      </ul>
+    </section>
+
+    <section class="card cta-card">
+      <h2>Nästa steg</h2>
+      <p>Vill du jämföra Månviken 40 mot din tomt, budget och planerade användning? Skicka en kort förfrågan så återkommer vi med prisbild och vägledning.</p>
       <div class="row">
         <a class="btn primary" href="../../index.html#kontakt">Få offert nu</a>
-        <a class="btn ghost" href="../../index.html">Till startsidan</a>
+        <a class="btn ghost" href="../vindhagen-50/">Jämför med Vindhagen 50</a>
       </div>
     </section>
   </main>

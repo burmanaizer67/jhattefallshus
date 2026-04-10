@@ -4,21 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vindhagen 50 | JH Attefallshus</title>
-  <meta name="description" content="Vindhagen 50 - rymligt attefallshus med familjefokus och tydlig prisbild.">
+  <meta name="description" content="Vindhagen 50 - ljust attefallshus med stora glaspartier, stark isolering och tydlig prisbild.">
   <link rel="icon" type="image/png" href="../../logotyp-jh-attefallshus.png">
   <style>
-    body { margin: 0; font-family: "Source Sans 3", Arial, sans-serif; background: #f7f4ef; color: #1f2a2e; }
-    .wrap { width: min(980px, 92vw); margin: 0 auto; }
-    header { background: #16313d; color: #fff; padding: 14px 0; }
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --line: #ddd5c8;
+      --text: #1f2a2e;
+      --muted: #4f5b60;
+      --brand: #16313d;
+      --accent: #bf7a33;
+      --radius: 14px;
+    }
+    body { margin: 0; font-family: "Source Sans 3", Arial, sans-serif; background: var(--bg); color: var(--text); }
+    .wrap { width: min(1080px, 92vw); margin: 0 auto; }
+    header { background: var(--brand); color: #fff; padding: 14px 0; }
     .logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; }
     .logo img { height: 32px; width: auto; }
     main { padding: 34px 0 56px; }
-    .card { background: #fff; border: 1px solid #ddd5c8; border-radius: 14px; padding: 18px; margin-top: 16px; }
-    .hero-img { width: 100%; border-radius: 14px; border: 1px solid #ddd5c8; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: start; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-top: 16px; }
+    .hero-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.88rem; font-weight: 700; color: #1f5a70; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.14; }
+    h1 { font-family: "Fraunces", serif; font-size: clamp(2rem, 4vw, 3rem); }
+    h2 { font-family: "Fraunces", serif; font-size: clamp(1.35rem, 2.7vw, 2rem); }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .fact { background: #f5f1ea; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+    .fact strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .bullet-list { margin: 0; padding-left: 18px; color: var(--muted); }
+    .bullet-list li { margin-bottom: 6px; }
     .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
     .btn { min-height: 44px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center; text-decoration: none; font-weight: 700; }
-    .primary { background: #bf7a33; color: #fff; }
+    .primary { background: var(--accent); color: #fff; }
     .ghost { background: #eef3f5; color: #173f4f; border: 1px solid #c6d3d9; }
+    .cta-card { background: linear-gradient(120deg, rgba(22, 49, 61, 0.95), rgba(30, 87, 106, 0.92)); color: #fff; }
+    .cta-card p { color: #dce7ec; }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .facts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -31,21 +58,59 @@
     </div>
   </header>
   <main class="wrap">
-    <h1>Vindhagen 50</h1>
-    <p>En rymlig modell med tydlig zonindelning och premiumkansla for familj eller arbete hemifran.</p>
-    <img class="hero-img" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/486/large/foretagsbild-fran-jh-byggmastare-ab.jpg" alt="Vindhagen 50">
+    <p class="eyebrow">Attefallshus 50 m2</p>
+    <div class="hero-grid">
+      <div>
+        <h1>Vindhagen 50</h1>
+        <p>Vindhagen 50 är modellen för dig som vill ha mer ljus, mer öppenhet och ett boende som känns större än kvadratmetrarna antyder redan vid första steget in.</p>
+        <div class="facts">
+          <div class="fact"><strong>Storlek</strong><span>50 m2 byggyta</span></div>
+          <div class="fact"><strong>Prisnivå</strong><span>Från 1 395 000 kr</span></div>
+          <div class="fact"><strong>Passar för</strong><span>Boende, kontor, gästhus</span></div>
+        </div>
+        <div class="row">
+          <a class="btn primary" href="../../index.html#kontakt">Få offert på Vindhagen 50</a>
+          <a class="btn ghost" href="../../index.html">Till startsidan</a>
+        </div>
+      </div>
+      <div>
+        <img class="hero-img" src="https://s3.eu-west-2.amazonaws.com/byggservice/photos/images/000/051/486/large/foretagsbild-fran-jh-byggmastare-ab.jpg?1773063178" alt="Vindhagen 50 exteriör">
+      </div>
+    </div>
+
     <section class="card">
-      <h2>Snabbfakta</h2>
-      <p>Storlek: 50 m2</p>
-      <p>Anvandning: Familjeboende, kontor, langtidsgaster</p>
-      <p>Prisniva: fran 1 395 000 kr</p>
+      <h2>Om modellen</h2>
+      <p>Vindhagen 50 kombinerar ett större format med tydlig arkitektur. Fem takfönster och tre skjutdörrar gör att ljuset blir en central del av upplevelsen, både i vardagen och när huset används för socialt umgänge.</p>
+      <p>Det gör modellen särskilt intressant för dig som vill ha ett modernt attefallshus med öppen känsla och stark premiumupplevelse.</p>
     </section>
+
     <section class="card">
       <h2>Varför välja Vindhagen 50?</h2>
-      <p>Mer yta, hog funktion och bra ljusinslapp gor modellen attraktiv for flera typer av behov.</p>
+      <ul class="bullet-list">
+        <li>Stora glaspartier som skapar ett ljust och luftigt boende.</li>
+        <li>250 mm PAROC-isolering i väggar, golv och tak.</li>
+        <li>Fullt utrustat kök och badrum utan kompromisser.</li>
+        <li>Leverans till Stockholm och Halmstad inom cirka 24 veckor.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Vanliga användningsområden</h2>
+      <p>Vindhagen 50 passar dig som vill skapa:</p>
+      <ul class="bullet-list">
+        <li>ett modernt fritidshus med stark ljusupplevelse</li>
+        <li>ett permanent boende i mindre skala</li>
+        <li>ett representativt gästhus eller generationsboende</li>
+        <li>ett boende där kök, badrum och materialnivå behöver kännas genomtänkta från start</li>
+      </ul>
+    </section>
+
+    <section class="card cta-card">
+      <h2>Nästa steg</h2>
+      <p>Om du vill förstå om Vindhagen 50 är rätt nivå av yta, ljus och budget för ditt projekt hjälper vi dig gärna vidare med offert och vägledning.</p>
       <div class="row">
         <a class="btn primary" href="../../index.html#kontakt">Få offert nu</a>
-        <a class="btn ghost" href="../../index.html">Till startsidan</a>
+        <a class="btn ghost" href="../stjarnvik-50/">Jämför med Stjärnvik 50</a>
       </div>
     </section>
   </main>
