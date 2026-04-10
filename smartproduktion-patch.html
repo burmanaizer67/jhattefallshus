@@ -834,6 +834,8 @@
         .replace(/[ö]/gi, "o");
     }
 
+    var usedSlugs = {};
+
     qa(".JHUnifiedModels article, .ServicesInline-services_inline_5282 article").forEach(function (card) {
       if (q(".JHModelMeta", card)) return;
 
@@ -841,7 +843,12 @@
       if (!titleEl) return;
       var title = (titleEl.textContent || "").trim();
       var meta = modelMap[title] || modelMap[normalizeModelTitle(title)];
+      if (meta && usedSlugs[meta.slug] && !usedSlugs["fjordhem-76"]) {
+        meta = modelMap["Fjordhem 76"];
+        if (titleEl) titleEl.textContent = "Fjordhem 76";
+      }
       if (!meta) return;
+      usedSlugs[meta.slug] = true;
 
       var wrap = q(".article-content-wrapper", card);
       if (!wrap) return;
