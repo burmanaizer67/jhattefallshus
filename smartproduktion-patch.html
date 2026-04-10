@@ -315,19 +315,19 @@
   function ensureHeroUpdate() {
     safeSetText(
       ".VideoHeader-video_header_8894 .header-custom-html-content h1",
-      "Nyckelfardiga Attefallshus med fast pris och trygg process"
+      "Nyckelfärdiga Attefallshus med fast pris och trygg process"
     );
 
     safeSetText(
       ".VideoHeader-video_header_8894 .header-custom-html-content p.text-color-white",
-      "Vi hjalper dig fran ide till fardigt hus med tydlig projektledning, genomtankt design och professionellt genomforande."
+      "Vi hjälper dig från idé till färdigt hus med tydlig projektledning, genomtänkt design och professionellt genomförande."
     );
 
     var heroBtnText = q(".VideoHeader-video_header_8894 .SmartButtonText");
-    if (heroBtnText) heroBtnText.textContent = "Fa kostnadsfri offert";
+    if (heroBtnText) heroBtnText.textContent = "Få kostnadsfri offert";
 
     var heroBtn = q(".VideoHeader-video_header_8894 .SmartButton");
-    if (heroBtn) heroBtn.setAttribute("data-href", "/offertforfragan");
+    if (heroBtn) heroBtn.setAttribute("data-href", "/offertf%C3%B6rfr%C3%A5gan");
 
     var btnContainer = q(".VideoHeader-video_header_8894 .HeaderEntrance .mt-3");
     if (btnContainer && !q(".JHSecondaryHeroBtn", btnContainer.parentNode)) {
@@ -335,7 +335,7 @@
       sec.className = "JHSecondaryHeroBtn btn btn-regular btn-medium";
       sec.href = "/vara-tjanster/attefallshus";
       sec.style.marginLeft = "10px";
-      sec.textContent = "Se vara husmodeller";
+      sec.textContent = "Se våra husmodeller";
       btnContainer.appendChild(sec);
     }
 
@@ -352,9 +352,9 @@
   }
 
   function ensureNavCta() {
-    qa("a[href='/offertforfragan'], a[href='/offertf%C3%B6rfr%C3%A5gan']").forEach(function (a) {
+    qa("a[href='/offertf%C3%B6rfr%C3%A5gan']").forEach(function (a) {
       if (a.textContent.trim().toLowerCase().indexOf("offert") === -1) {
-        a.textContent = "Fa offert";
+        a.textContent = "Få offert";
       }
     });
   }
@@ -367,11 +367,11 @@
     band.className = "JHCredBand";
     band.innerHTML = ""
       + "<div class='JHCredBandInner'>"
-      + "<div class='JHCredItem'><strong>20+ ars erfarenhet</strong><span>Gedigen byggteknisk kompetens.</span></div>"
+      + "<div class='JHCredItem'><strong>20+ års erfarenhet</strong><span>Gedigen byggteknisk kompetens.</span></div>"
       + "<div class='JHCredItem'><strong>Fast pris</strong><span>Tydlig offert med klara ramar.</span></div>"
-      + "<div class='JHCredItem'><strong>Nyckelfardiga losningar</strong><span>Helhetsansvar genom hela projektet.</span></div>"
-      + "<div class='JHCredItem'><strong>Stockholm till Halmstad</strong><span>Leverans i ett brett geografiskt omrade.</span></div>"
-      + "<div class='JHCredItem'><strong>Personlig kontakt</strong><span>Samma kontakt fran start till mal.</span></div>"
+      + "<div class='JHCredItem'><strong>Nyckelfärdiga lösningar</strong><span>Helhetsansvar genom hela projektet.</span></div>"
+      + "<div class='JHCredItem'><strong>Stockholm till Halmstad</strong><span>Leverans i ett brett geografiskt område.</span></div>"
+      + "<div class='JHCredItem'><strong>Personlig kontakt</strong><span>Samma kontakt från start till mål.</span></div>"
       + "</div>";
 
     header.insertAdjacentElement("afterend", band);
@@ -385,14 +385,14 @@
     var section = document.createElement("section");
     section.className = "JHWhyUs";
     section.innerHTML = ""
-      + "<h2>Darfor valjer kunder JH Attefallshus</h2>"
+      + "<h2>Därför väljer kunder JH Attefallshus</h2>"
       + "<div class='JHWhyUsGrid'>"
-      + "<article class='JHWhyCard'><h3>Tydlig projektledning</h3><p>Du vet alltid nasta steg, tidplan och ansvar.</p></article>"
+      + "<article class='JHWhyCard'><h3>Tydlig projektledning</h3><p>Du vet alltid nästa steg, tidplan och ansvar.</p></article>"
       + "<article class='JHWhyCard'><h3>Professionell kommunikation</h3><p>Snabba svar och raka besked under hela resan.</p></article>"
-      + "<article class='JHWhyCard'><h3>Byggteknisk kompetens</h3><p>Erfarenhet som skapar trygghet i beslut och genomforande.</p></article>"
-      + "<article class='JHWhyCard'><h3>Flexibla losningar</h3><p>Anpassningar utifran tomt, behov och budget.</p></article>"
-      + "<article class='JHWhyCard'><h3>Kvalitet over tid</h3><p>Genomtankta materialval och robust byggnation.</p></article>"
-      + "<article class='JHWhyCard'><h3>Trygg process</h3><p>Fran forsta kontakt till fardigt resultat utan krangel.</p></article>"
+      + "<article class='JHWhyCard'><h3>Byggteknisk kompetens</h3><p>Erfarenhet som skapar trygghet i beslut och genomförande.</p></article>"
+      + "<article class='JHWhyCard'><h3>Flexibla lösningar</h3><p>Anpassningar utifrån tomt, behov och budget.</p></article>"
+      + "<article class='JHWhyCard'><h3>Kvalitet över tid</h3><p>Genomtänkta materialval och robust byggnation.</p></article>"
+      + "<article class='JHWhyCard'><h3>Trygg process</h3><p>Från första kontakt till färdigt resultat utan krangel.</p></article>"
       + "</div>";
 
     target.insertAdjacentElement("beforebegin", section);
@@ -400,12 +400,12 @@
 
   function enhanceModelCards() {
     var modelMap = {
-      "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris fran 995 000 kr" },
-      "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris fran 1 195 000 kr" },
-      "Vindhagen 50": { size: "50 m2", use: "Familj/Kontor", price: "Pris fran 1 395 000 kr" },
-      "Stjarnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris fran 1 425 000 kr" },
-      "Fjordhem 76": { size: "76 m2", use: "Familjeboende", price: "Pris fran 1 995 000 kr" },
-      "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris fran 2 495 000 kr" }
+      "Solglanta 30": { size: "30 m2", use: "Gasthus/Uthyrning", price: "Pris från 995 000 kr" },
+      "Manviken 40": { size: "40 m2", use: "Permanent/Fritid", price: "Pris från 1 195 000 kr" },
+      "Vindhagen 50": { size: "50 m2", use: "Familj/Kontor", price: "Pris från 1 395 000 kr" },
+      "Stjarnvik 50": { size: "50 m2", use: "Permanent/Fritid", price: "Pris från 1 425 000 kr" },
+      "Fjordhem 76": { size: "76 m2", use: "Familjeboende", price: "Pris från 1 995 000 kr" },
+      "Solmark 120": { size: "120 m2", use: "Permanentboende", price: "Pris från 2 495 000 kr" }
     };
 
     qa(".ServicesInline-services_inline_5282 article").forEach(function (card) {
@@ -437,7 +437,7 @@
     if (servicesSection && !q(".JHSectionCTA")) {
       var cta = document.createElement("div");
       cta.className = "JHSectionCTA";
-      cta.innerHTML = "<a href='/offertforfragan'>Fa offert pa ratt modell</a>";
+      cta.innerHTML = "<a href='/offertf%C3%B6rfr%C3%A5gan'>Få offert på rätt modell</a>";
       servicesSection.insertAdjacentElement("afterend", cta);
     }
   }
@@ -452,11 +452,11 @@
     section.innerHTML = ""
       + "<h2>En tydlig process i fem steg</h2>"
       + "<div class='JHProcessGrid'>"
-      + "<article class='JHProcessStep'><div class='nr'>1</div><h3>Forfragan</h3><p>Du beskriver behov, tomt och malbild.</p></article>"
-      + "<article class='JHProcessStep'><div class='nr'>2</div><h3>Radgivning och offert</h3><p>Du far tydlig rekommendation och prisram.</p></article>"
-      + "<article class='JHProcessStep'><div class='nr'>3</div><h3>Val av modell</h3><p>Vi planerar losning utifran dina forutsattningar.</p></article>"
-      + "<article class='JHProcessStep'><div class='nr'>4</div><h3>Produktion och leverans</h3><p>Bygget drivs strukturerat med lopande dialog.</p></article>"
-      + "<article class='JHProcessStep'><div class='nr'>5</div><h3>Fardigt hus</h3><p>Overlamning av ett hus redo att anvandas.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>1</div><h3>Förfrågan</h3><p>Du beskriver behov, tomt och målbild.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>2</div><h3>Rådgivning och offert</h3><p>Du får tydlig rekommendation och prisram.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>3</div><h3>Val av modell</h3><p>Vi planerar lösning utifrån dina förutsättningar.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>4</div><h3>Produktion och leverans</h3><p>Bygget drivs strukturerat med löpande dialog.</p></article>"
+      + "<article class='JHProcessStep'><div class='nr'>5</div><h3>Färdigt hus</h3><p>Överlämning av ett hus redo att användas.</p></article>"
       + "</div>";
 
     reviews.insertAdjacentElement("beforebegin", section);
@@ -465,8 +465,8 @@
   function tuneFaqCopy() {
     var map = {
       "Vad kostar det att bygga ett Attefallshus med er?": "Vad kostar ett attefallshus?",
-      "Hur lang tid tar det att bygga mitt nya Attefallshus?": "Hur lang ar leveranstiden?",
-      "Var kan man anlita er for era tjanster?": "Levererar ni i hela Sverige?"
+      "Hur lang tid tar det att bygga mitt nya Attefallshus?": "Hur lång är leveranstiden?",
+      "Var kan man anlita er för era tjänster?": "Levererar ni i hela Sverige?"
     };
 
     qa(".SmartFaqs h3").forEach(function (h) {
@@ -484,10 +484,10 @@
     cta.className = "JHBottomCTA";
     cta.innerHTML = ""
       + "<div class='JHBottomCTAInner'>"
-      + "<h2>Beratta vad du vill bygga sa aterkommer vi snabbt med offert</h2>"
-      + "<p>Fa tydlig prisbild, passande modellforslag och nasta steg utan bindning.</p>"
+      + "<h2>Berätta vad du vill bygga så återkommer vi snabbt med offert</h2>"
+      + "<p>Få tydlig prisbild, passande modellförslag och nästa steg utan bindning.</p>"
       + "<div class='JHBottomCTABtns'>"
-      + "<a class='primary' href='/offertforfragan'>Fa offert</a>"
+      + "<a class='primary' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert</a>"
       + "<a class='secondary' href='/sida/kontakta-oss'>Kontakta oss</a>"
       + "</div>"
       + "</div>";
@@ -501,7 +501,7 @@
     bar.className = "JHMobileStickyCTA";
     bar.innerHTML = ""
       + "<a class='a' href='tel:0702754702'>Ring</a>"
-      + "<a class='b' href='/offertforfragan'>Fa offert</a>";
+      + "<a class='b' href='/offertf%C3%B6rfr%C3%A5gan'>Få offert</a>";
     document.body.appendChild(bar);
   }
 
